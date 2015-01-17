@@ -1,0 +1,33 @@
+{
+    "indent": 4,
+    "plusplus": false,
+
+    "eqeqeq": true,
+    "smarttabs": true,
+    "curly": false,
+    "forin": false,
+    "latedef": false,
+    "newcap": true,
+    "strict": true,
+    "trailing": true,
+    "noempty": true,
+
+    "asi": false,
+    "boss": false,
+    "debug": true,
+    "evil": false,
+    "globalstrict": false,
+    "laxbreak": false,
+    "laxcomma": false,
+    "onecase": false,
+    "proto": false,
+    "smarttabs": false,
+    "supernew": false,
+
+    "browser": true,
+    "devel": true,
+    "jquery": false,
+
+    "onevar": true,
+    "es3": true
+}
