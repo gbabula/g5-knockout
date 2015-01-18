@@ -2,10 +2,13 @@
   "name": "g5-knockout",
   "version": "0.1.0",
   "description": "Knockout/Browserify base app",
+  "repository": "https://github.com/gbabula/g5-knockout",
   "main": "src/scripts/index.js",
   "scripts": {
-    "install": "beefy src/scripts/index.js",
-    "test": "node test/g5-knockout-test.js"
+    "beefy": "beefy src/scripts/index.js",
+    "test": "node test/g5-knockout-test.js",
+    "build-js": "browserify src/scripts/index.js | uglifyjs -mc > src/static/bundle.js",
+    "watch-js": "watchify src/scripts/index.js -o src/static/bundle.js -dv"
   },
   "author": "Greg Babula",
   "license": "ISC",
@@ -13,10 +16,12 @@
     "browserify": "^8.1.1",
     "knockout": "^3.2.0",
     "lodash": "^2.4.1",
-    "vm-browserify": "0.0.4"
+    "vm-browserify": "0.0.4",
+    "watchify": "^2.2.1"
   },
   "devDependencies": {
     "beefy": "^2.1.1",
-    "tape": "^3.2.0"
+    "tape": "^3.2.0",
+    "uglify-js": "^2.4.16"
   }
 }
