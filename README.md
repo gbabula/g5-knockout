@@ -17,10 +17,16 @@ npm install
 
 ###Server
 
-> Beefy server running at http://localhost:9966
+> Beefy server running on http://localhost:9966
 
 ```
-beefy src/scripts/index.js
+npm run beefy
+```
+
+###Watchify
+
+```
+npm run watch-js
 ```
 
 ###Test
@@ -29,6 +35,14 @@ beefy src/scripts/index.js
 
 ```
 npm test
+```
+
+###Build
+
+> Minify and concatenate JS
+
+```
+npm run build-js
 ```
 
 ###Flow
