@@ -9,7 +9,10 @@
     </head>
     <body>
 
-        <main id="g5-knockout" data-bind="css: css">
+        <main id="g5-knockout-app" data-bind="attr: {
+            'class': css,
+            'data-ko-bound': data_ko_bound
+        }">
 
             <section class="splash-container">
                 <div class="splash">
@@ -29,7 +32,11 @@
 
         </main>
 
+        <!-- DEV -->
         <script src="/src/scripts/index.js"></script>
+
+        <!-- PROD -->
+        <!-- <script src="/src/static/bundle.js"></script> -->
 
     </body>
 </html>

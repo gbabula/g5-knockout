@@ -20,7 +20,11 @@ function onLoad() {
 
     var demoApp = new g5Knockout({
         container: document.getElementById('g5-knockout')
-    }).init();
+    });
+
+    // var demoApp = Object.create(g5Knockout.prototype);
+
+    // console.log( demoApp );
 
     // app.on('init', function(data) {
 

@@ -14,19 +14,47 @@ var events  = require('events');
 
 /**
  *
- * @constructor masterModel
+ * @constructor MasterModel
  * @param {Object} opts
  *
  */
-function masterModel(opts) {
+function MasterModel(opts) {
 
-    this.opts = _.extend({}, opts);
+    if (!(this instanceof MasterModel)) {
+        return new MasterModel(opts);
+    }
+
+    this.opts = _.extend({
+        interval: 40000
+    }, opts);
 
     events.EventEmitter.call(this);
 
 }
 
-util.inherits(masterModel, events.EventEmitter);
+util.inherits(MasterModel, events.EventEmitter);
+
+/**
+ *
+ * @method init
+ *
+ */
+MasterModel.prototype.init = function() {
+
+    this.fetch();
+
+};
+
+/**
+ *
+ * @method fetch
+ *
+ */
+MasterModel.prototype.fetch = function() {
+
+    util.log('TODO fetch data and call update method');
+
+};
 
 /**
  *
@@ -34,14 +62,10 @@ util.inherits(masterModel, events.EventEmitter);
  * @param {Object} data
  *
  */
-masterModel.prototype.update = function(data) {
+MasterModel.prototype.update = function(data) {
 
     this.emit('data', data);
 
 };
 
-//
-// TODO get data, call update method with data
-//
-
-exports.master = masterModel;
+exports.MasterModel = MasterModel;

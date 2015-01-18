@@ -8,29 +8,53 @@
 
 'use strict';
 
-var _      = require('lodash');
-var ko     = require('knockout');
-var util   = require('util');
+var _       = require('lodash');
+var ko      = require('knockout');
+var util    = require('util');
+var events  = require('events');
 
 /**
  *
- * @constructor viewModelMaster
+ * @constructor MasterViewModel
  * @param {Object} opts
+ * 
+ * @param {String} opts.css classes added to main container
+ * @param {String} opts.data_ko_bound
  *
  */
-function viewModelMaster(opts) {
+function MasterViewModel(opts) {
 
     var _this = this;
 
+    if (!(this instanceof MasterViewModel)) {
+        return new MasterViewModel(opts);
+    }
+
     this.opts = _.extend({
-        css: 'g5-knockout-app'
+        css: 'g5-knockout-app g5-knockout-bound',
+        data_ko_bound: 'true'
     }, opts);
 
-    this.css = ko.observable(_this.opts.css);
+    this.addObservables();
+
+    events.EventEmitter.call(this);
+}
+
+util.inherits(MasterViewModel, events.EventEmitter);
+
+/**
+ *
+ * @method addObservables
+ *
+ */
+MasterViewModel.prototype.addObservables = function() {
+
+    this.css = ko.observable(this.opts.css);
+    this.data_ko_bound = ko.observable(this.opts.data_ko_bound);
 
     this.textStr = ko.observable('testing');
 
-}
+};
 
 /**
  *
@@ -39,7 +63,7 @@ function viewModelMaster(opts) {
  * @description refreshes data on viewModel
  *
  */
-viewModelMaster.prototype.refresh = function(data) {
+MasterViewModel.prototype.refresh = function(data) {
 
     util.log('g5-knockout : refresh viewModel');
 
@@ -47,6 +71,4 @@ viewModelMaster.prototype.refresh = function(data) {
 
 };
 
-
-
-exports.master = viewModelMaster;
+exports.MasterViewModel = MasterViewModel;

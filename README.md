@@ -10,10 +10,13 @@ Style Guide [https://github.com/airbnb/javascript](https://github.com/airbnb/jav
 
 ###Usage
 
-```
-npm install
-```
+```js
+var g5Knockout = require('g5-knockout').construct;
 
+var demoApp = new g5Knockout({
+    container: document.getElementById('g5-knockout-app')
+});
+```
 
 ###Server
 
@@ -21,12 +24,6 @@ npm install
 
 ```
 npm run beefy
-```
-
-###Watchify
-
-```
-npm run watch-js
 ```
 
 ###Test
@@ -45,6 +42,12 @@ npm test
 npm run build-js
 ```
 
+###Watchify
+
+```
+npm run watch-js
+```
+
 ###Flow
 
 model -> EventTower <- viewModel
@@ -52,9 +55,8 @@ model -> EventTower <- viewModel
 
 ###TODO
 
-*
-*
-*
+* EventTower / Communication
+* Write additional tests
+* Cleanup
+* Etc...
 
-<!-- #1 install node -->
-<!-- #2  -->

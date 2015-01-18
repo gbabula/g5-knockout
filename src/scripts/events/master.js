@@ -12,16 +12,17 @@ var util = require('util');
 
 /**
  *
- * @constructor eventTower
+ * @constructor EventTower
  *
  */
 function EventTower() {
 
+    if (!(this instanceof EventTower)) {
+        return new EventTower();
+    }
+
     console.log(this);
 
 }
-
-// EventTower.prototype.
-
 
 exports.EventTower = EventTower;
