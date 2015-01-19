@@ -1,7 +1,7 @@
 /**
  *
  * @module viewModel/master
- * @description 
+ * @description master viewModel
  * @author Greg Babula
  *
  */
@@ -45,21 +45,37 @@ util.inherits(MasterViewModel, events.EventEmitter);
 /**
  *
  * @method addObservables
+ * @returns {Object} this
  *
  */
 MasterViewModel.prototype.addObservables = function() {
 
+    var _this = this;
+
     this.css = ko.observable(this.opts.css);
     this.data_ko_bound = ko.observable(this.opts.data_ko_bound);
 
-    this.textStr = ko.observable('testing');
+    this.userName = ko.observable('');
+    this.userNameLength = ko.observable('0');
 
+    /**
+     *
+     * @function updateUserNameLength
+     * @description example function that mutates input
+     *
+     */
+    this.updateUserNameLength = function() {
+        _this.userNameLength(_this.userName() && _this.userName().length);
+    }
+
+    return this;
 };
 
 /**
  *
  * @method reresh
  * @param {Object} data
+ * @returns {Object} this
  * @description refreshes data on viewModel
  *
  */
@@ -67,7 +83,11 @@ MasterViewModel.prototype.refresh = function(data) {
 
     util.log('g5-knockout : refresh viewModel');
 
-    // this.textStr(data.textStr);
+    //
+    // update observables with new data
+    //
+
+    return this;
 
 };
 

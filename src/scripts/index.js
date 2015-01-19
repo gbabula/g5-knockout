@@ -1,7 +1,7 @@
 /**
  *
  * @module index
- * @description 
+ * @description simple implementation example
  * @author Greg Babula
  *
  */
@@ -19,18 +19,8 @@ var g5Knockout   = require('./g5-knockout').construct;
 function onLoad() {
 
     var demoApp = new g5Knockout({
-        container: document.getElementById('g5-knockout')
+        container: document.getElementById('g5-knockout-app')
     });
-
-    // var demoApp = Object.create(g5Knockout.prototype);
-
-    // console.log( demoApp );
-
-    // app.on('init', function(data) {
-
-        // util.log('g5-knockout : init event : ', data);
-
-    // });
 
 }
 

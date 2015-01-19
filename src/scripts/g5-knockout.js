@@ -3,6 +3,7 @@
  * @module g5-knockout
  * @description knockout/browserify base app
  * @author Greg Babula
+ * @version 0.1.0
  *
  */
 
@@ -11,7 +12,6 @@
 var _               = require('lodash');
 var ko              = require('knockout');
 var url             = require('url');
-var vm              = require('vm');
 var util            = require('util');
 var events          = require('events');
 var masterEvents    = require('./events/master');
@@ -35,7 +35,7 @@ function G5Knockout(opts) {
     }
 
     this.opts = _.extend({
-        container: undefined
+        container: document.getElementById('g5-knockout-app')
     }, opts);
 
     this.instance = false;
@@ -70,10 +70,13 @@ G5Knockout.prototype.init = function() {
 
         ko.applyBindings(_this.viewModel, _this.container);
 
-        _this.emit('init', true);
         _this.instance = true;
+        _this.model.init();
 
     }
+
+    console.log(window.location.href);
+    console.log(url.parse(window.location.href));
 
     return this;
 

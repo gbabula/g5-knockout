@@ -1,7 +1,7 @@
 /**
  *
  * @module model/master
- * @description 
+ * @description master model
  * @author Greg Babula
  *
  */
@@ -37,22 +37,28 @@ util.inherits(MasterModel, events.EventEmitter);
 /**
  *
  * @method init
+ * @returns {Object} this
  *
  */
 MasterModel.prototype.init = function() {
 
     this.fetch();
 
+    return this;
+
 };
 
 /**
  *
  * @method fetch
+ * @returns {Object} this
  *
  */
 MasterModel.prototype.fetch = function() {
 
     util.log('TODO fetch data and call update method');
+
+    return this;
 
 };
 
@@ -60,11 +66,14 @@ MasterModel.prototype.fetch = function() {
  *
  * @method update
  * @param {Object} data
+ * @returns {Object} this
  *
  */
 MasterModel.prototype.update = function(data) {
 
     this.emit('data', data);
+
+    return this;
 
 };
 
