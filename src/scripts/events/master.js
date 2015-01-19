@@ -1,7 +1,7 @@
 /**
  *
  * @module events/master
- * @description
+ * @description handles communication between the model and viewModel
  * @author Greg Babula
  *
  */
@@ -23,10 +23,55 @@ function EventTower() {
         return new EventTower();
     }
 
-    util.log('EventTower');
+    this.model = this.model || {};
+    this.viewModel = this.viewModel || {};
 
-    console.log(this);
+    this.attachEvents();
 
 }
+
+/**
+ *
+ * @method attachEvents
+ * @returns {Objec} this
+ *
+ */
+EventTower.prototype.attachEvents = function() {
+
+    var _this = this,
+        _model = _this.model,
+        _viewModel = _this.viewModel;
+
+    console.log(_this);
+    console.log(_model);
+    console.log(_viewModel);
+
+    /**
+     *
+     * @event data
+     * @param {Object} data
+     *
+     */
+    _model.on('data', function(data) {
+
+        _viewModel.emit('data-refresh', data);
+
+    });
+
+    /**
+     *
+     * @event data-refresh
+     * @param {Object} data
+     *
+     */
+    _viewModel.on('data-refresh', function(data) {
+
+        // _viewModel.refreh(data);
+
+    });
+
+    return this;
+
+};
 
 exports.EventTower = EventTower;

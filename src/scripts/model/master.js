@@ -56,7 +56,12 @@ MasterModel.prototype.init = function() {
  */
 MasterModel.prototype.fetch = function() {
 
+    var data = {};
+
     util.log('TODO fetch data and call update method');
+
+    // this.update(data);
+    this.emit('data', data);
 
     return this;
 
@@ -71,7 +76,7 @@ MasterModel.prototype.fetch = function() {
  */
 MasterModel.prototype.update = function(data) {
 
-    this.emit('data', data);
+    // update stored data
 
     return this;
 

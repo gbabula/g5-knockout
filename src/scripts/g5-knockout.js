@@ -40,6 +40,7 @@ function G5Knockout(opts) {
 
     this.instance = false;
     this.container = this.opts.container;
+    this.url = url.parse(window.location.href);
 
     this.model = new MasterModel();
     this.viewModel = new MasterViewModel(_this.opts);
@@ -52,6 +53,7 @@ function G5Knockout(opts) {
 }
 
 util.inherits(G5Knockout, events.EventEmitter);
+util.inherits(G5Knockout, masterEvents.EventTower);
 
 /**
  *
@@ -74,9 +76,6 @@ G5Knockout.prototype.init = function() {
         _this.model.init();
 
     }
-
-    console.log(window.location.href);
-    console.log(url.parse(window.location.href));
 
     return this;
 

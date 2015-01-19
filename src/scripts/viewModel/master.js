@@ -38,6 +38,7 @@ function MasterViewModel(opts) {
     this.addObservables();
 
     events.EventEmitter.call(this);
+
 }
 
 util.inherits(MasterViewModel, events.EventEmitter);
