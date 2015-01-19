@@ -1,6 +1,6 @@
 #g5-knockout.js
 
-Knockout/Browserify base app
+Knockout/Browserify base app - MVVM with an event layer that handles communication between the model and viewModel.
 
 ---
 
@@ -23,7 +23,7 @@ var demoApp = new g5Knockout({
 > Beefy server running on http://localhost:9966
 
 ```
-npm run beefy
+npm run start
 ```
 
 ###Test
@@ -36,16 +36,18 @@ npm test
 
 ###Build
 
-> Minify and concatenate JS
+> Bundles CSS & JS
 
 ```
-npm run build-js
+npm run build
 ```
 
-###Watchify
+###Watch
+
+> Watches and rebuilds CSS & JS
 
 ```
-npm run watch-js
+npm run watch
 ```
 
 ###Flow
@@ -58,5 +60,7 @@ model -> EventTower <- viewModel
 * EventTower / Communication
 * Write additional tests
 * Cleanup
+* Additional docs
+* Medium writeup
 * Etc...
 

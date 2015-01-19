@@ -1,14 +1,18 @@
 {
   "name": "g5-knockout",
   "version": "0.1.0",
-  "description": "Knockout/Browserify base app",
+  "description": "Knockout/Browserify base app - MVVM with an event layer that handles communication between the model and viewModel.",
   "repository": "https://github.com/gbabula/g5-knockout",
   "main": "src/scripts/index.js",
   "scripts": {
-    "beefy": "beefy src/scripts/index.js",
+    "start": "beefy src/scripts/index.js",
     "test": "node test/g5-knockout-test.js",
     "build-js": "browserify src/scripts/index.js | uglifyjs -mc > src/static/bundle.js",
-    "watch-js": "watchify src/scripts/index.js -o src/static/bundle.js -dv"
+    "build-css": "cat src/styles/*.css > src/static/bundle.css",
+    "build": "npm run build-js && npm run build-css",
+    "watch-js": "watchify src/scripts/index.js -o src/static/bundle.js -dv",
+    "watch-css": "catw src/styles/*.css -o src/static/bundle.css -v",
+    "watch": "npm run watch-js && npm run watch-css"
   },
   "author": "Greg Babula",
   "license": "ISC",
@@ -16,12 +20,12 @@
     "browserify": "^8.1.1",
     "knockout": "^3.2.0",
     "lodash": "^2.4.1",
-    "vm-browserify": "0.0.4",
-    "watchify": "^2.2.1"
+    "uglify-js": "^2.4.16"
   },
   "devDependencies": {
     "beefy": "^2.1.1",
+    "catw": "^0.2.0",
     "tape": "^3.2.0",
-    "uglify-js": "^2.4.16"
+    "watchify": "^2.2.1"
   }
 }
