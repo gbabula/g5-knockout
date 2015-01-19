@@ -1,0 +1,65 @@
+/**
+ * 
+ * base.css
+ * 
+ */
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.7em;
+    color: #7f8c8d;
+    font-size: 13px;
+}
+
+.pure-img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+.l-box {
+    padding: 1em;
+}
+
+.l-box-lrg {
+    padding: 2em;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.is-center {
+    text-align: center;
+}
+
+/**
+ * 
+ * demo.css
+ * 
+ */
+
+main {
+    font-size: 16px;
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 2em;
+}
+
+.splash-head {
+    color: rebeccapurple;
+}
+
+.content-wrapper {
+    margin-top: 6em;
+}
+
+.pure-form legend {
+    color: #7F8C8D;
+    transition: ease .8s;
+}
+
+.pure-form.has-user-name legend {
+    border-color: green;
+}
