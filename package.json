@@ -1,7 +1,7 @@
 {
   "name": "g5-knockout",
   "version": "0.1.0",
-  "description": "Knockout/Browserify base app - MVVM with an event layer that handles communication between the model and viewModel.",
+  "description": "Knockout/Browserify base app - MVVM with an event layer.",
   "repository": "https://github.com/gbabula/g5-knockout",
   "main": "src/scripts/g5-knockout.js",
   "scripts": {

@@ -1,6 +1,6 @@
 #g5-knockout.js
 
-Knockout/Browserify base app - MVVM with an event layer that handles communication between the model and viewModel.
+Knockout/Browserify base app - MVVM with an event layer.
 
 ---
 
