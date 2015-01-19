@@ -5,28 +5,56 @@
         <title>g5-knockout.js</title>
 
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css" />
-        <link rel="stylesheet" href="/src/styles/pure-marketing.css" />
+        <link rel="stylesheet" href="/src/styles/base.css" />
+        <link rel="stylesheet" href="/src/styles/demo.css" />
     </head>
     <body>
 
-        <main id="g5-knockout-app" data-bind="attr: {
+        <main id="g5-knockout-app" class="l-box-lrg" data-bind="attr: {
             'class': css,
             'data-ko-bound': data_ko_bound
         }">
 
-            <section class="splash-container">
+            <section class="splash-container is-center">
                 <div class="splash">
                     <h1 class="splash-head">g5-knockout.js</h1>
-                    <p class="splash-subhead">Knockout/Browserify base app</p>
-                    <p><a href="#" class="pure-button pure-button-primary">View on Github</a></p>
+                    <p class="splash-subhead"><strong>Knockout/Browserify</strong> base app - 
+                    <strong>MVVM</strong> with an event layer that handles communication 
+                    between the model and viewModel.</p>
+
+                    <p><a href="https://github.com/gbabula/g5-knockout" 
+                        class="pure-button pure-button-primary">View on Github</a></p>
                 </div>
             </section>
 
             <div class="content-wrapper">
                 <div class="content">
                     <h2 class="content-head is-center">Example</h2>
-                    <p>test</p>
-                    <p data-bind="text: textStr"></p>
+
+                    <form action="#" class="pure-form" data-bind="css: {
+                        'has-user-name': userName
+                    }">
+                        <fieldset>
+                            <legend>Two way binding example</legend>
+                            <input
+                                type="text"
+                                data-bind="textInput: userName, event: {
+                                    keyup: updateUserNameLength
+                                }"
+                                placeholder="Your name"
+                            />
+                        </fieldset>
+                    </form>
+
+                    <!-- ko if: userName -->
+                        <article data-bind="css: {
+                            'hidden': !userName
+                        }">
+                            <p><strong>User:</strong></p>
+                            <p data-bind="text: userName"></p>
+                            <span data-bind="text: 'User name length = ' + userNameLength()"></span>
+                        </article>
+                    <!-- /ko -->
                 </div>
             </div>
 
