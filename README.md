@@ -4,7 +4,7 @@ Knockout/Browserify base app - MVVM with an event layer.
 
 ---
 
-Style Guide [https://github.com/airbnb/javascript](https://github.com/airbnb/javascript)
+Style Guide - [https://github.com/airbnb/javascript](https://github.com/airbnb/javascript)
 
 ---
 
@@ -20,15 +20,13 @@ var demoApp = new g5Knockout({
 
 ###Server
 
-> Beefy server running on http://localhost:9966
+> Watchify, Beefy server running on [http://localhost:9966](http://localhost:9966)
 
 ```
-npm run start
+npm run start-dev
 ```
 
 ###Test
-
-> Tape test (all files in test/ directory)
 
 ```
 npm test
@@ -36,23 +34,13 @@ npm test
 
 ###Build
 
-> Bundles CSS & JS
-
 ```
 npm run build
 ```
 
-###Watch
-
-> Watches and rebuilds CSS & JS
-
-```
-npm run watch
-```
-
 ###TODO
 
-* EventTower / Communication
+* KO components / bulk register
 * Write additional tests
 * Cleanup
 * Additional docs
@@ -66,7 +54,7 @@ npm run watch
 
 ###License
 
-Copyright (c) Greg Babula <gbabula@gmail.com>
+Copyright (c) 2015, Greg Babula <gbabula@gmail.com>
 
 Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
 
