@@ -9,7 +9,7 @@
     </head>
     <body>
 
-        <main id="g5-knockout-app" class="l-box-lrg" data-bind="attr: {
+        <main id="g5-knockout-app" data-bind="attr: {
             'class': css,
             'data-ko-bound': data_ko_bound
         }">
@@ -29,11 +29,15 @@
                 <div class="content">
                     <h2 class="content-head is-center">Example</h2>
 
-                    <form action="#" class="pure-form" data-bind="css: {
-                        'has-user-name': userName
-                    }">
+                    <form
+                        action="#"
+                        class="pure-form"
+                        data-bind="css: {
+                            'has-user-name': userName
+                        }">
                         <fieldset>
                             <legend>Two way binding example</legend>
+
                             <input
                                 type="text"
                                 data-bind="textInput: userName, event: {
@@ -50,7 +54,9 @@
                         }">
                             <p><strong>User:</strong></p>
                             <p data-bind="text: userName"></p>
-                            <span data-bind="text: 'User name length = ' + userNameLength()"></span>
+
+                            <span>User name length = </span>
+                            <span data-bind="text: userNameLength"></span>
                         </article>
                     <!-- /ko -->
                 </div>
