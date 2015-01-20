@@ -46,6 +46,7 @@ npm run build
 
 ###TODO
 
+* Fix live reload
 * Register package
 * Event layer (WIP)
 * KO components / bulk register
