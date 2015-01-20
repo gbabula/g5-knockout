@@ -20,7 +20,7 @@ var demoApp = new g5Knockout({
 
 ###Server
 
-> Watchify, Beefy server running on [http://localhost:9966](http://localhost:9966)
+> Beefy server with live reload running on [http://localhost:9966](http://localhost:9966)
 
 ```
 npm run start-dev
