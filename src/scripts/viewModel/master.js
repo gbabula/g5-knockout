@@ -46,6 +46,7 @@ util.inherits(MasterViewModel, events.EventEmitter);
 /**
  *
  * @method addObservables
+ * @description method wrapping observable additions
  * @returns {Object} this
  *
  */
@@ -70,6 +71,7 @@ MasterViewModel.prototype.addObservables = function() {
     }
 
     return this;
+    
 };
 
 /**
