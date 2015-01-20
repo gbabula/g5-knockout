@@ -8,6 +8,12 @@ Style Guide - [https://github.com/airbnb/javascript](https://github.com/airbnb/j
 
 ---
 
+###Setup
+
+```
+git clone https://github.com/gbabula/g5-knockout && cd g5-knockout && npm install
+```
+
 ###Usage
 
 ```js
@@ -40,6 +46,7 @@ npm run build
 
 ###TODO
 
+* Register package
 * Event layer (WIP)
 * KO components / bulk register
 * Write additional tests
