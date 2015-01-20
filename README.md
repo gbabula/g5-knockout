@@ -40,6 +40,7 @@ npm run build
 
 ###TODO
 
+* Event layer (WIP)
 * KO components / bulk register
 * Write additional tests
 * Cleanup
@@ -51,6 +52,8 @@ npm run build
 
 * https://github.com/substack/browserify-handbook
 * http://substack.net/task_automation_with_npm_run 
+* https://github.com/chrisdickinson/beefy
+* https://github.com/substack/watchify
 
 ###License
 
