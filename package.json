@@ -6,7 +6,7 @@
   "main": "src/scripts/g5-knockout.js",
   "scripts": {
     "start": "npm run build && beefy src/static/bundle.js",
-    "start-dev": "npm run watch & npm run start",
+    "start-dev": "beefy src/static/bundle.js --live",
     "test": "tape test/*.js",
     "build-js": "browserify src/scripts/index.js | uglifyjs -mc > src/static/bundle.js",
     "build-css": "cat src/styles/*.css > src/static/bundle.css",
