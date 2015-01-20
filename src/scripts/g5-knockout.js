@@ -1,7 +1,7 @@
 /**
  *
  * @module g5-knockout
- * @description knockout/browserify base app
+ * @description Knockout/Browserify base app - MVVM with an event layer
  * @author Greg Babula
  * @version 0.1.0
  *

@@ -22,6 +22,9 @@ function onLoad() {
         container: document.getElementById('g5-knockout-app')
     });
 
+    // console.log(demoApp);
+    // console.log(demoApp.url);
+
 }
 
 window.onload = onLoad;

@@ -57,6 +57,8 @@ main {
 
 .pure-form legend {
     color: #7F8C8D;
+    margin-bottom: 1em;
+    padding: 1em 0;
     transition: ease .8s;
 }
 
