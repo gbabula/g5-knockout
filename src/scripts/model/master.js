@@ -37,6 +37,7 @@ util.inherits(MasterModel, events.EventEmitter);
 /**
  *
  * @method init
+ * @description initiates master model, begins data fetch
  * @returns {Object} this
  *
  */
@@ -58,9 +59,8 @@ MasterModel.prototype.fetch = function() {
 
     var data = {};
 
-    util.log('TODO fetch data and call update method');
+    util.log('g5-knockout : fetch master model data');
 
-    // this.update(data);
     this.emit('data', data);
 
     return this;
@@ -76,7 +76,9 @@ MasterModel.prototype.fetch = function() {
  */
 MasterModel.prototype.update = function(data) {
 
+    //
     // update stored data
+    //
 
     return this;
 
