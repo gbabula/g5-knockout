@@ -33,7 +33,8 @@ function EventTower() {
 /**
  *
  * @method attachEvents
- * @returns {Objec} this
+ * @description event mediator method
+ * @returns {Object} this
  *
  */
 EventTower.prototype.attachEvents = function() {
@@ -42,9 +43,7 @@ EventTower.prototype.attachEvents = function() {
         _model = _this.model,
         _viewModel = _this.viewModel;
 
-    console.log(_this);
-    console.log(_model);
-    console.log(_viewModel);
+    util.log('g5-knockout : add events');
 
     /**
      *
@@ -66,7 +65,7 @@ EventTower.prototype.attachEvents = function() {
      */
     _viewModel.on('data-refresh', function(data) {
 
-        // _viewModel.refreh(data);
+        _viewModel.refresh(data);
 
     });
 
