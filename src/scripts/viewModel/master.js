@@ -19,8 +19,8 @@ var events  = require('events');
  * @param {Object} opts
  * 
  * @param {String} opts.css classes added to main container
- * @param {String} opts.data_ko_bound
- *
+ * @param {Element} opts.container
+ * 
  */
 function MasterViewModel(opts) {
 
@@ -32,16 +32,31 @@ function MasterViewModel(opts) {
 
     this.opts = _.extend({
         css: 'g5-knockout-app g5-knockout-bound',
-        data_ko_bound: 'true'
+        container: undefined
     }, opts);
 
-    this.addObservables();
+    // todo, get accurate Boolean here
+    this.koBound = false;
 
     events.EventEmitter.call(this);
 
 }
 
 util.inherits(MasterViewModel, events.EventEmitter);
+
+/**
+ *
+ * @method init
+ * @returns {Object} this
+ *
+ */
+MasterViewModel.prototype.init = function() {
+
+    this.addObservables();
+
+    return this;
+
+};
 
 /**
  *
@@ -54,11 +69,15 @@ MasterViewModel.prototype.addObservables = function() {
 
     var _this = this;
 
-    this.css = ko.observable(this.opts.css);
-    this.data_ko_bound = ko.observable(this.opts.data_ko_bound);
+    util.log('g5-knockout : viewModel bindings applied? : ', _this.data_ko_bound);
+    util.log('g5-knockout : add viewModel observables');
+
+    this.css = ko.observable(_this.opts.css);
+    this.data_ko_bound = ko.observable(_this.koBound);
 
     this.userName = ko.observable('');
     this.userNameLength = ko.observable('0');
+    this.dataCollection = ko.observableArray([]);
 
     /**
      *
@@ -71,7 +90,7 @@ MasterViewModel.prototype.addObservables = function() {
     }
 
     return this;
-    
+
 };
 
 /**
@@ -84,11 +103,11 @@ MasterViewModel.prototype.addObservables = function() {
  */
 MasterViewModel.prototype.refresh = function(data) {
 
-    util.log('g5-knockout : refresh viewModel');
+    var collection = data && data.collection;
 
-    //
-    // update observables with new data
-    //
+    util.log('g5-knockout : refresh viewModel data : ', data);
+
+    this.dataCollection(collection);
 
     return this;
 

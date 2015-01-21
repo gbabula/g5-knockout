@@ -13,6 +13,7 @@ var util = require('util');
 /**
  *
  * @constructor EventTower
+ * @description mediates events between model and viewModel
  *
  */
 function EventTower() {
@@ -33,7 +34,7 @@ function EventTower() {
 /**
  *
  * @method attachEvents
- * @description event mediator method
+ * @description core attachEvents method
  * @returns {Object} this
  *
  */

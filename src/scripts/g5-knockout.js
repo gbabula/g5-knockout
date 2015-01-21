@@ -58,7 +58,7 @@ util.inherits(G5Knockout, masterEvents.EventTower);
 /**
  *
  * @method init
- * @description initiates G5Knockout instance
+ * @description instantiates G5Knockout, ensures bindings are applied once
  * @returns {Object} this
  *
  */
@@ -68,12 +68,19 @@ G5Knockout.prototype.init = function() {
 
     util.log('g5-knockout : init');
 
+    // 
+    // instantiate viewModel first, this way all observables
+    // are ready to be mutated and/or updated on data load/refresh
+    // 
+
     if (!this.instance) {
 
-        ko.applyBindings(_this.viewModel, _this.container);
+        this.instance = true;
 
-        _this.instance = true;
-        _this.model.init();
+        this.viewModel.init();
+        this.model.init();
+
+        ko.applyBindings(_this.viewModel, _this.container);
 
     }
 
@@ -82,5 +89,4 @@ G5Knockout.prototype.init = function() {
 };
 
 exports.version = '0.1.0';
-
 exports.construct = G5Knockout;
