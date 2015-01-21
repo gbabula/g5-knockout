@@ -23,6 +23,7 @@ function pad(n) {
 /**
  *
  * @function timestamp
+ * @description util that returns a timestamp string (same functionality as nodes util.log)
  * @returns {String}
  *
  */

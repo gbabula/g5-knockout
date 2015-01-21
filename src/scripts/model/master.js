@@ -30,6 +30,8 @@ function MasterModel(opts) {
         interval: 40000
     }, opts);
 
+    this.dataCache = {};
+
     events.EventEmitter.call(this);
 
 }

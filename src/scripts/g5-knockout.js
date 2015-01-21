@@ -24,6 +24,7 @@ var MasterViewModel = require('./viewModel/master').MasterViewModel;
  * @param {Object} opts
  * 
  * @param {String} opts.container container id attr
+ * @param {Number} opts.interval refresh rate for model
  *
  */
 function G5Knockout(opts) {
@@ -35,14 +36,15 @@ function G5Knockout(opts) {
     }
 
     this.opts = _.extend({
-        container: document.getElementById('g5-knockout-app')
+        container: document.getElementById('g5-knockout-app'),
+        interval: undefined
     }, opts);
 
     this.instance = false;
     this.container = this.opts.container;
-    this.url = url.parse(window.location.href);
+    this.url = url.parse(window.location.href) || {};
 
-    this.model = new MasterModel();
+    this.model = new MasterModel(_this.opts);
     this.viewModel = new MasterViewModel(_this.opts);
 
     masterEvents.EventTower.call(this);
