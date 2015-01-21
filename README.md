@@ -5,8 +5,6 @@ __Knockout/Browserify__ base app - __MVVM__ with an __event__ layer.
 > g5-knockout is an app/module scaffold based on a tried and proven
 > application architecture and solid development patterns.
 
----
-
 Style Guide - [https://github.com/airbnb/javascript](https://github.com/airbnb/javascript)
 
 ---
@@ -53,14 +51,14 @@ npm run build
 
 ###TODO
 
-* Fix live reload
-* Register package / separate  demo and g5-knockout module
-* KO components / bulk register
-* Write additional tests
-* Cleanup
-* Additional docs
-* Medium writeup
-* Etc...
+- [ ] Fix live reload
+- [ ] Register package / separate demo and g5-knockout module
+- [ ] KO components / bulk register
+- [ ] Write additional tests
+- [ ] Cleanup
+- [ ] Additional docs
+- [ ] Medium writeup
+- [ ] Etc...
 
 ###Reference
 
