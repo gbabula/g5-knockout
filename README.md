@@ -8,6 +8,10 @@ Style Guide - [https://github.com/airbnb/javascript](https://github.com/airbnb/j
 
 ---
 
+![g5-knockout demo app](http://oi60.tinypic.com/9fz12u.jpg)
+
+---
+
 ###Setup
 
 ```
