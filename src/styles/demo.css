@@ -19,6 +19,12 @@ main {
     margin-top: 6em;
 }
 
+.example-head {
+    border-bottom: 1px solid #e5e5e5;
+    margin: 3em 0 1.5em 0;
+    padding: 1em 0;
+}
+
 .pure-form legend {
     color: #7F8C8D;
     margin-bottom: 1em;

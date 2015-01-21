@@ -15,6 +15,7 @@
         }">
 
             <section class="splash-container is-center">
+
                 <div class="splash">
                     <h1 class="splash-head">g5-knockout.js</h1>
                     <p class="splash-subhead"><strong>Knockout/Browserify</strong> base app - 
@@ -23,9 +24,11 @@
                     <p><a href="https://github.com/gbabula/g5-knockout" 
                         class="pure-button pure-button-primary">View on Github</a></p>
                 </div>
+
             </section>
 
             <div class="content-wrapper">
+
                 <div class="content">
                     <h2 class="content-head is-center">Example</h2>
 
@@ -44,14 +47,13 @@
                                     keyup: updateUserNameLength
                                 }"
                                 placeholder="Your name"
+                                autofocus
                             />
                         </fieldset>
                     </form>
 
                     <!-- ko if: userName -->
-                        <article data-bind="css: {
-                            'hidden': !userName
-                        }">
+                        <article>
                             <p><strong>User:</strong></p>
                             <p data-bind="text: userName"></p>
 
@@ -60,6 +62,31 @@
                         </article>
                     <!-- /ko -->
                 </div>
+
+                <div class="content">
+                    <p class="example-head">Modeled data example</p>
+
+                    <!-- ko if: dataCollection().length -->
+                        <table class="pure-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Title</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <!-- ko foreach: dataCollection-->
+                                    <tr>
+                                        <td data-bind="text: $index() + 1"></td>
+                                        <td data-bind="text: $data.title"></td>
+                                    </tr>
+                                <!-- /ko -->
+                            </tbody>
+                        </table>
+                    <!-- /ko -->
+                </div>
+
             </div>
 
         </main>
