@@ -36,8 +36,7 @@ function G5Knockout(opts) {
     }
 
     this.opts = _.extend({
-        container: document.getElementById('g5-knockout-app'),
-        interval: undefined
+        container: document.getElementById('g5-knockout-app')
     }, opts);
 
     this.instance = false;
