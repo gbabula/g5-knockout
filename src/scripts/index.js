@@ -1,7 +1,7 @@
 /**
  *
  * @module index
- * @description simple implementation example
+ * @description g5-knockout implementation example
  * @author Greg Babula
  *
  */

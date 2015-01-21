@@ -47,8 +47,7 @@ npm run build
 ###TODO
 
 * Fix live reload
-* Register package
-* Event layer (WIP)
+* Register package / separate  demo and g5-knockout module
 * KO components / bulk register
 * Write additional tests
 * Cleanup
