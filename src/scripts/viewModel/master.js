@@ -35,7 +35,6 @@ function MasterViewModel(opts) {
         container: undefined
     }, opts);
 
-    // todo, get accurate Boolean here
     this.koBound = false;
 
     events.EventEmitter.call(this);
@@ -52,7 +51,35 @@ util.inherits(MasterViewModel, events.EventEmitter);
  */
 MasterViewModel.prototype.init = function() {
 
+    this.addG5Observables();
     this.addObservables();
+
+    return this;
+
+};
+
+/**
+ *
+ * @method addG5Observables
+ * @description adds core observables provided by g5-knockout module
+ * @returns {Object} this
+ *
+ */
+MasterViewModel.prototype.addG5Observables = function() {
+
+    var _this = this;
+
+    util.log('g5-knockout : add viewModel observables');
+
+    this.css = ko.observable(_this.opts.css);
+    this.data_g5knockout_instance = ko.observable(true);
+    this.data_knockout_bound = ko.observable(!!_this.data_g5knockout_instance());
+
+    // 
+    // if the observable is properly returning data, assume
+    // that knockout bindings have been correctly applied
+    // 
+    _this.koBound = !!_this.data_g5knockout_instance();
 
     return this;
 
@@ -68,12 +95,6 @@ MasterViewModel.prototype.init = function() {
 MasterViewModel.prototype.addObservables = function() {
 
     var _this = this;
-
-    util.log('g5-knockout : viewModel bindings applied? : ', _this.data_ko_bound);
-    util.log('g5-knockout : add viewModel observables');
-
-    this.css = ko.observable(_this.opts.css);
-    this.data_ko_bound = ko.observable(_this.koBound);
 
     this.userName = ko.observable('');
     this.userNameLength = ko.observable('0');
