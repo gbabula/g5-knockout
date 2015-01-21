@@ -1,6 +1,9 @@
 #g5-knockout.js
 
-Knockout/Browserify base app - MVVM with an event layer.
+__Knockout/Browserify__ base app - __MVVM__ with an __event__ layer.
+
+> g5-knockout is an app/module scaffold based on a tried and proven
+> application architecture and solid development patterns.
 
 ---
 
