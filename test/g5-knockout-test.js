@@ -1,7 +1,7 @@
 /**
  *
  * @module g5-knockout-test
- * @description 
+ * @description test for core g5-knockout module
  * @author Greg Babula
  *
  */
@@ -13,8 +13,9 @@ var g5knockout  = require('../src/scripts/g5-knockout');
 
 test('g5-knockout test', function(t) {
 
-    t.plan(1);
+    t.plan(2);
 
-    t.equal(g5knockout.version, '0.1.0');
+    t.equal(typeof g5knockout.construct, 'function');
+    t.equal(typeof g5knockout.version, 'string');
 
 });
