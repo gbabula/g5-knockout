@@ -15,10 +15,10 @@ Style Guide - [https://github.com/airbnb/javascript](https://github.com/airbnb/j
 ###Setup
 
 ```
-git clone https://github.com/gbabula/g5-knockout && cd g5-knockout && npm install
+git clone https://github.com/gbabula/g5-knockout && cd g5-knockout && npm install && npm run start
 ```
 
-###Usage
+###Module Usage
 
 ```js
 var g5Knockout = require('g5-knockout').construct;
