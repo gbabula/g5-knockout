@@ -14,5 +14,7 @@ npm-debug.log
 #################
 dist
 .tmp
+.todo
+.idea
 /build
-
+src/static
