@@ -97,18 +97,23 @@ MasterViewModel.prototype.addObservables = function() {
     var _this = this;
 
     this.userName = ko.observable('');
-    this.userNameLength = ko.observable('0');
+    this.userNameLength = ko.observable(0);
+
+    this.dataTime = ko.observable();
     this.dataCollection = ko.observableArray([]);
 
     /**
      *
-     * @function updateUserNameLength
-     * @description example function that mutates input
+     * @function
+     * @description computed function example
+     * @returns {Number} user name length
      *
      */
-    this.updateUserNameLength = function() {
-        _this.userNameLength(_this.userName() && _this.userName().length);
-    }
+    this.userNameLength = ko.computed(function() {
+
+        return _this.userName() && _this.userName().length;
+
+    });
 
     return this;
 
@@ -124,11 +129,15 @@ MasterViewModel.prototype.addObservables = function() {
  */
 MasterViewModel.prototype.refresh = function(data) {
 
-    var collection = data && data.collection;
+    data = data || {};
+
+    var collection = data.collection,
+        time = data.time;
 
     util.log('g5-knockout : refresh viewModel data : ', data);
 
     this.dataCollection(collection);
+    this.dataTime(time);
 
     return this;
 

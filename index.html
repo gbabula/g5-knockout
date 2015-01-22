@@ -31,7 +31,7 @@
             <div class="content-wrapper">
 
                 <div class="content">
-                    <h2 class="content-head is-center">Example</h2>
+                    <h2 class="content-head is-center">Examples</h2>
 
                     <form
                         action="#"
@@ -40,13 +40,11 @@
                             'has-user-name': userName
                         }">
                         <fieldset>
-                            <legend>Two way binding example</legend>
+                            <legend>Two way binding:</legend>
 
                             <input
                                 type="text"
-                                data-bind="textInput: userName, event: {
-                                    keyup: updateUserNameLength
-                                }"
+                                data-bind="textInput: userName"
                                 placeholder="Your name"
                                 autofocus
                             />
@@ -65,7 +63,7 @@
                 </div>
 
                 <div class="content">
-                    <p class="example-head">Modeled data example</p>
+                    <p class="example-head">Modeled data:</p>
 
                     <!-- ko if: dataCollection().length -->
                         <table class="pure-table">
@@ -85,6 +83,8 @@
                                 <!-- /ko -->
                             </tbody>
                         </table>
+
+                        <p><em>Timestamp - <span data-bind="text: dataTime"></span></em></p>
                     <!-- /ko -->
                 </div>
 
