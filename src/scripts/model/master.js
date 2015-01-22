@@ -30,6 +30,7 @@ function MasterModel(opts) {
         interval: 40000
     }, opts);
 
+    this.instance = false;
     this.dataCache = {};
 
     events.EventEmitter.call(this);
@@ -48,6 +49,7 @@ util.inherits(MasterModel, events.EventEmitter);
 MasterModel.prototype.init = function() {
 
     this.fetch();
+    this.instance = true;
 
     return this;
 

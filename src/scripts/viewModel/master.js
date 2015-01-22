@@ -35,6 +35,7 @@ function MasterViewModel(opts) {
         container: undefined
     }, opts);
 
+    this.instance = false;
     this.koBound = false;
 
     events.EventEmitter.call(this);
@@ -51,8 +52,14 @@ util.inherits(MasterViewModel, events.EventEmitter);
  */
 MasterViewModel.prototype.init = function() {
 
-    this.addG5Observables();
-    this.addObservables();
+    if (!this.instance) {
+
+        this.addG5Observables();
+        this.addObservables();
+
+        this.instance = true;
+
+    }
 
     return this;
 

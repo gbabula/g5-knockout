@@ -23,7 +23,8 @@ var MasterViewModel = require('./viewModel/master').MasterViewModel;
  * @constructor G5Knockout
  * @param {Object} opts
  * 
- * @param {String} opts.container container id attr
+ * @param {Element} opts.container container id attr
+ * @param {String} opts.i18n localization string
  * @param {Number} opts.interval refresh rate for model
  *
  */
@@ -36,7 +37,8 @@ function G5Knockout(opts) {
     }
 
     this.opts = _.extend({
-        container: document.getElementById('g5-knockout-app')
+        container: document.getElementById('g5-knockout-app'),
+        i18n: 'en'
     }, opts);
 
     this.instance = false;
