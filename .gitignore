@@ -17,4 +17,4 @@ dist
 .todo
 .idea
 /build
-src/static
+/src/static
