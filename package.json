@@ -5,8 +5,8 @@
   "repository": "https://github.com/gbabula/g5-knockout",
   "main": "src/scripts/g5-knockout.js",
   "scripts": {
-    "start": "npm run build && beefy src/static/bundle.js",
-    "start-dev": "npm run build && beefy src/static/bundle.js --live",
+    "start": "npm run build && python -m SimpleHTTPServer 9966",
+    "start-dev": "npm run watch & npm start",
     "test": "tape test/*.js",
     "build-js": "browserify src/scripts/index.js | uglifyjs -mc > src/static/bundle.js",
     "build-css": "cat src/styles/*.css > src/static/bundle.css",
@@ -35,7 +35,6 @@
     "xtend": "^4.0.0"
   },
   "devDependencies": {
-    "beefy": "^2.1.1",
     "catw": "^0.2.0",
     "tape": "^3.2.0",
     "watchify": "^2.2.1"
