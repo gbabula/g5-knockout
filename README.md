@@ -35,7 +35,7 @@ var demoApp = new g5Knockout({
 
 ###Server
 
-> Beefy server with live reload running on [http://localhost:9966](http://localhost:9966)
+> Server running on [http://localhost:9966](http://localhost:9966)
 
 ```
 npm run start-dev
@@ -55,14 +55,15 @@ npm run build
 
 ###TODO
 
-- [ ] Fix live reload
+- [x] Fix server / watchify instance
+- [ ] Consider using node server instead of simple python server
 - [ ] Register package / separate demo and g5-knockout module
-- [ ] KO components / bulk register
+- [ ] KO components
+- [ ] KO components bulk register
 - [ ] Write additional tests
 - [ ] Cleanup
 - [ ] Additional docs
 - [ ] Medium writeup
-- [ ] Etc...
 
 ###Style Guide / Rules
 
