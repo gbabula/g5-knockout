@@ -22,8 +22,9 @@ function onLoad() {
         container: document.getElementById('g5-knockout-app')
     });
 
-    // console.log(demoApp);
-    // console.log(demoApp.url);
+    util.log('g5-knockout : init demoApp instance');
+    util.log('g5-knockout : demoApp model instance : ', demoApp.model.instance);
+    util.log('g5-knockout : demoApp viewModel instance : ', demoApp.viewModel.instance);
 
 }
 
