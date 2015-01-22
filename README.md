@@ -17,6 +17,11 @@ _application architecture and solid development patterns._
 ```
 git clone https://github.com/gbabula/g5-knockout && cd g5-knockout && npm install && npm run start
 ```
+###Options
+
+* __container__: `Element` unique element to bind Knockout to
+* __interval__: `Number` refresh rate (milliseconds)
+* __i18n__: `String` localization identification (en/es)
 
 ###Module Usage
 
