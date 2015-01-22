@@ -8,7 +8,7 @@ _application architecture and solid development patterns._
 
 ---
 
-![g5-knockout diagram](http://oi57.tinypic.com/2zpnrmf.jpg)
+![g5-knockout flow](http://i59.tinypic.com/96xe6e.png)
 
 ---
 
