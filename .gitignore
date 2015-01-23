@@ -17,4 +17,5 @@ dist
 .todo
 .idea
 /build
-/src/static
+/src/static/bundle.js
+/src/static/bundle.css
