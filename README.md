@@ -35,7 +35,7 @@ var demoApp = new g5Knockout({
 
 ###Server
 
-> Server running on [http://localhost:9966](http://localhost:9966)
+> Server running on [http://localhost:9966](http://localhost:9966) with auto builds
 
 ```
 npm run start-dev
@@ -53,23 +53,22 @@ npm test
 npm run build
 ```
 
-###TODO
-
-- [x] Fix server / watchify instance
-- [ ] Consider using node server instead of simple python server
-- [ ] Register package / separate demo and g5-knockout module
-- [ ] KO components
-- [ ] KO components bulk register
-- [ ] Write additional tests
-- [ ] Cleanup
-- [ ] Additional docs
-- [ ] Medium writeup
-
 ###Style Guide / Rules
 
 * Style Guide - [https://github.com/airbnb/javascript](https://github.com/airbnb/javascript)
 * Protect against `new` - constructors can be called with or without `new`
 * Maintain chainability, methods return `this`
+
+###TODO
+
+- [x] Fix server / watchify instance
+- [ ] Consider using node server instead of simple python server
+- [ ] Register package
+- [ ] KO components
+- [ ] Write additional tests
+- [ ] Cleanup
+- [ ] Additional docs
+- [ ] Medium writeup
 
 ###Reference
 
