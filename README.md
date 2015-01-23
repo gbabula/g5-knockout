@@ -17,6 +17,7 @@ _application architecture and solid development patterns._
 ```
 git clone https://github.com/gbabula/g5-knockout && cd g5-knockout && npm install && npm run start
 ```
+
 ###Options
 
 * __container__: `Element` unique element to bind Knockout to
@@ -74,7 +75,6 @@ npm run build
 
 * https://github.com/substack/browserify-handbook
 * http://substack.net/task_automation_with_npm_run 
-* https://github.com/chrisdickinson/beefy
 * https://github.com/substack/watchify
 
 ###License
