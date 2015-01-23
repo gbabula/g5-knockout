@@ -19,12 +19,12 @@ var g5Knockout   = require('./g5-knockout').construct;
 function onLoad() {
 
     var demoApp = new g5Knockout({
-        container: document.getElementById('g5-knockout-app')
+        container: document && document.getElementById('g5-knockout-app')
     });
 
     util.log('g5-knockout : init demoApp instance');
-    util.log('g5-knockout : demoApp model instance : ', demoApp.model.instance);
-    util.log('g5-knockout : demoApp viewModel instance : ', demoApp.viewModel.instance);
+    util.log('g5-knockout : demoApp model instance :', demoApp.model.instance);
+    util.log('g5-knockout : demoApp viewModel instance :', demoApp.viewModel.instance);
 
 }
 

@@ -37,13 +37,13 @@ function G5Knockout(opts) {
     }
 
     this.opts = _.extend({
-        container: document.getElementById('g5-knockout-app'),
+        container: document && document.getElementById('g5-knockout-app'),
         i18n: 'en'
     }, opts);
 
     this.instance = false;
     this.container = this.opts.container;
-    this.url = url.parse(window.location.href) || {};
+    this.url = url.parse(window && window.location.href) || {};
 
     this.model = new MasterModel(_this.opts);
     this.viewModel = new MasterViewModel(_this.opts);
