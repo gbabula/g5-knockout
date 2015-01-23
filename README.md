@@ -14,6 +14,8 @@ _application architecture and solid development patterns._
 
 ###Setup
 
+> Installs dependencies, runs initial build and starts up a simple [python server](http://localhost:9966)
+
 ```
 git clone https://github.com/gbabula/g5-knockout && cd g5-knockout && npm install && npm run start
 ```
