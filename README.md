@@ -6,6 +6,8 @@ _g5-knockout is an app/module scaffold based on a tried and proven_
 
 _application architecture and solid development patterns._
 
+[Read More](https://medium.com/@gregbabula/knockout-browserify-base-app-mvvm-with-an-event-layer-7b0996eb4d0a)
+
 ---
 
 ![g5-knockout flow](http://i59.tinypic.com/96xe6e.png)
@@ -71,7 +73,7 @@ npm run build
 - [ ] Write additional tests
 - [ ] Cleanup
 - [ ] Additional docs
-- [ ] Medium writeup
+- [x] Medium writeup
 
 ###Reference
 
