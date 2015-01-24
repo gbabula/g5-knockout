@@ -1,5 +1,7 @@
 #g5-knockout.js
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/gbabula/g5-knockout?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 __Knockout/Browserify__ base app - __MVVM__ with an __event__ layer.
 
 _g5-knockout is an app/module scaffold based on a tried and proven_
