@@ -24,8 +24,6 @@ var events  = require('events');
  */
 function MasterViewModel(opts) {
 
-    var _this = this;
-
     if (!(this instanceof MasterViewModel)) {
         return new MasterViewModel(opts);
     }

@@ -91,5 +91,5 @@ G5Knockout.prototype.init = function() {
 
 };
 
-exports.version = '0.1.0';
+exports.VERSION = '0.1.0';
 exports.construct = G5Knockout;

@@ -18,8 +18,6 @@ var util = require('util');
  */
 function EventTower() {
 
-    var _this = this;
-
     if (!(this instanceof EventTower)) {
         return new EventTower();
     }

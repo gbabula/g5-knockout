@@ -16,6 +16,6 @@ test('g5-knockout test', function(t) {
     t.plan(2);
 
     t.equal(typeof g5knockout.construct, 'function');
-    t.equal(typeof g5knockout.version, 'string');
+    t.equal(typeof g5knockout.VERSION, 'string');
 
 });

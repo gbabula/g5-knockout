@@ -11,7 +11,6 @@
 var _         = require('lodash');
 var util      = require('util');
 var events    = require('events');
-var http      = require('http');
 var coreUtil  = require('../core/util');
 
 /**
@@ -60,7 +59,7 @@ MasterModel.prototype.init = function() {
  * @method fetch
  * @param {Number} interval
  * @returns {Object} this
- * @todo add polling, fetch data from server (via http module)
+ * @todo add polling, fetch data from server
  *
  */
 MasterModel.prototype.fetch = function(interval) {
