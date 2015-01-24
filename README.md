@@ -64,6 +64,11 @@ npm run build
 * Protect against `new` - constructors can be called with or without `new`
 * Maintain chainability, methods return `this`
 
+###Notes :clipboard:
+
+* `npm run start` will run a single build and start the server, if you want auto builds run `npm run start-dev`
+* If you're having issues running the setup command, make sure you have the proper permissions setup (you can also attempt to run the commands with sudo, although that is usually discouraged)
+
 ###TODO :construction:
 
 - [ ] Register package
@@ -80,9 +85,12 @@ npm run build
 
 ###Reference :link:
 
-* https://github.com/substack/browserify-handbook
-* http://substack.net/task_automation_with_npm_run 
-* https://github.com/substack/watchify
+* [About g5-knockout](https://medium.com/@gregbabula/knockout-browserify-base-app-mvvm-with-an-event-layer-7b0996eb4d0a)
+* [KnockoutJS Docs](http://knockoutjs.com/documentation/introduction.html)
+* [Browserify Handbook](https://github.com/substack/browserify-handbook)
+* [Task Automation with npm run](http://substack.net/task_automation_with_npm_run)
+* [About Watchify](https://github.com/substack/watchify)
+* [Simple HTTP Server](https://docs.python.org/2/library/simplehttpserver.html)
 
 ###License :shipit:
 
