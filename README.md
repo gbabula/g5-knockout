@@ -6,7 +6,7 @@ _g5-knockout is an app/module scaffold based on a tried and proven_
 
 _application architecture and solid development patterns._
 
-[Read More](https://medium.com/@gregbabula/knockout-browserify-base-app-mvvm-with-an-event-layer-7b0996eb4d0a)
+[Read More](https://medium.com/@gregbabula/knockout-browserify-base-app-mvvm-with-an-event-layer-7b0996eb4d0a) :books:
 
 ---
 
@@ -40,7 +40,7 @@ var demoApp = new g5Knockout({
 
 ###Server
 
-> Server running on [http://localhost:9966](http://localhost:9966) with auto builds
+> Server running on [http://localhost:9966](http://localhost:9966) with auto builds, [Ctrl+C] to kill server
 
 ```
 npm run start-dev
@@ -64,24 +64,27 @@ npm run build
 * Protect against `new` - constructors can be called with or without `new`
 * Maintain chainability, methods return `this`
 
-###TODO
+###TODO :construction:
 
-- [x] Fix server / watchify instance
-- [ ] Consider using node server instead of simple python server
 - [ ] Register package
-- [ ] KO components
+- [ ] KO components implementation
 - [ ] Write additional tests
 - [ ] Cleanup
 - [ ] Additional docs
+- [ ] Live demo
+- [ ] Step through code, document things that need to happen on each layer more clearly
+- [ ] Define code that needs to be replaced by users more clearly
+- [ ] Visual outline of code execution (simple diagram connecting code layers)
 - [x] Medium writeup
+- [x] Fix server / watchify instance
 
-###Reference
+###Reference :link:
 
 * https://github.com/substack/browserify-handbook
 * http://substack.net/task_automation_with_npm_run 
 * https://github.com/substack/watchify
 
-###License
+###License :shipit:
 
 Copyright (c) 2015, Greg Babula <gbabula@gmail.com>
 
