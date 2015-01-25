@@ -24,6 +24,26 @@ _application architecture and solid development patterns._
 git clone https://github.com/gbabula/g5-knockout && cd g5-knockout && npm install && npm run start
 ```
 
+###Server
+
+> Server running on [http://localhost:9966](http://localhost:9966) with auto builds, [Ctrl+C] to kill server
+
+```
+npm run start-dev
+```
+
+###Test
+
+```
+npm test
+```
+
+###Build
+
+```
+npm run build
+```
+
 ###Module Usage
 
 ```js
@@ -46,26 +66,6 @@ demoApp.init();
 
 * __init__: creates instance, instantiates viewModel and model
 * __display__: toggles container visibility based on `Boolean` param
-
-###Server
-
-> Server running on [http://localhost:9966](http://localhost:9966) with auto builds, [Ctrl+C] to kill server
-
-```
-npm run start-dev
-```
-
-###Test
-
-```
-npm test
-```
-
-###Build
-
-```
-npm run build
-```
 
 ###Style Guide / Rules
 
