@@ -1,0 +1,16 @@
+/**
+ * 
+ * g5-knockout.css
+ * 
+ */
+
+.g5-knockout-app {
+    display: none;
+    visibility: hidden;
+}
+
+[data-g5knockout-visible] {
+    display: block;
+    visibility: visible;
+}
+
