@@ -2,6 +2,8 @@
  *
  * @module events/master
  * @description handles communication between the model and viewModel
+ * events are defined in a single location which allows the overall app flow to be visualized 
+ * much easier, especially for developers new to the project
  * @author Greg Babula
  *
  */

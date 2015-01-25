@@ -24,12 +24,6 @@ _application architecture and solid development patterns._
 git clone https://github.com/gbabula/g5-knockout && cd g5-knockout && npm install && npm run start
 ```
 
-###Options
-
-* __container__: `Element` unique element to bind Knockout to
-* __interval__: `Number` refresh rate (milliseconds)
-* __i18n__: `String` localization identification (en/es)
-
 ###Module Usage
 
 ```js
@@ -38,7 +32,20 @@ var g5Knockout = require('g5-knockout').construct;
 var demoApp = new g5Knockout({
     container: document.getElementById('g5-knockout-app')
 });
+
+demoApp.init();
 ```
+
+###Options
+
+* __container__: `Element` unique element to bind Knockout to
+* __interval__: `Number` refresh rate (milliseconds)
+* __i18n__: `String` localization identification (en/es)
+
+###Methods
+
+* __init__: creates instance, instantiates viewModel and model
+* __display__: toggles container visibility based on `Boolean` param
 
 ###Server
 
