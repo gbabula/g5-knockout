@@ -34,6 +34,12 @@ function MasterViewModel(opts) {
     }, opts);
 
     this.instance = false;
+    this.active = false;
+
+    // 
+    // used internally to determine if knockout
+    // bindings have been correctly applied
+    // 
     this.koBound = false;
 
     events.EventEmitter.call(this);
@@ -52,10 +58,20 @@ MasterViewModel.prototype.init = function() {
 
     if (!this.instance) {
 
-        this.addG5Observables();
-        this.addObservables();
-
         this.instance = true;
+        this.active = true;
+
+        // 
+        // core observables
+        // 
+        this.addG5Observables();
+
+        // 
+        // module specific observables chained with computed function additions,
+        // makes sense to think about it this way because the computed functions
+        // will be mutating previously added observables
+        // 
+        this.addObservables().addComputedFunctions();
 
     }
 
@@ -77,14 +93,16 @@ MasterViewModel.prototype.addG5Observables = function() {
     util.log('g5-knockout : add viewModel observables');
 
     this.css = ko.observable(_this.opts.css);
-    this.data_g5knockout_instance = ko.observable(true);
-    this.data_knockout_bound = ko.observable(!!_this.data_g5knockout_instance());
+
+    this.data_g5knockout_instance = ko.observable(_this.instance);
+    this.data_g5knockout_visible = ko.observable(_this.active);
+    this.data_g5knockout_bound = ko.observable(!!_this.data_g5knockout_instance());
 
     // 
     // if the observable is properly returning data, assume
     // that knockout bindings have been correctly applied
     // 
-    _this.koBound = !!_this.data_g5knockout_instance();
+    _this.koBound = _this.data_g5knockout_bound() || false;
 
     return this;
 
@@ -93,19 +111,32 @@ MasterViewModel.prototype.addG5Observables = function() {
 /**
  *
  * @method addObservables
- * @description method wrapping observable additions
+ * @description method wrapping observable additions, single location for all regular observables
  * @returns {Object} this
  *
  */
 MasterViewModel.prototype.addObservables = function() {
-
-    var _this = this;
 
     this.userName = ko.observable('');
     this.userNameLength = ko.observable(0);
 
     this.dataTime = ko.observable();
     this.dataCollection = ko.observableArray([]);
+
+    return this;
+
+};
+
+/**
+ *
+ * @method addComputedFunctions
+ * @description single location for all computed functions
+ * @returns {Object} this
+ *
+ */
+MasterViewModel.prototype.addComputedFunctions = function() {
+
+    var _this = this;
 
     /**
      *
@@ -141,8 +172,31 @@ MasterViewModel.prototype.refresh = function(data) {
 
     util.log('g5-knockout : refresh viewModel data : ', data);
 
-    this.dataCollection(collection);
-    this.dataTime(time);
+    if (this.koBound) {
+
+        this.dataCollection(collection);
+        this.dataTime(time);
+
+    }
+
+    return this;
+
+};
+
+/**
+ *
+ * @method isContainerVisible
+ * @param {Boolean} isVisible
+ * @returns {Object} this
+ *
+ */
+MasterViewModel.prototype.isContainerVisible = function(isVisible) {
+
+    if (this.koBound) {
+
+        this.data_g5knockout_visible(isVisible);
+
+    }
 
     return this;
 

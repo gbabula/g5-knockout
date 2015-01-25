@@ -66,6 +66,10 @@ MasterModel.prototype.fetch = function(interval) {
 
     interval = interval || this.opts.interval;
 
+    //
+    // sample data Object, TODO fetch some real server data here
+    // emit data event on success
+    // 
     var data = {
         time: coreUtil.timestamp(),
         refreshRate: interval,
