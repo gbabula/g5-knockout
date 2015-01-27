@@ -16,6 +16,18 @@
             'data-g5knockout-bound': data_g5knockout_bound
         }">
 
+            <section data-bind="template: { name: 'g5-knockout-demo-template' }">
+                <span class="loading">&hellip;</span>
+            </sction>
+
+        </main>
+
+        <!-- bundled JS -->
+        <script src="src/static/bundle.js"></script>
+
+        <!-- g5-knockout demo template -->
+        <script type="text/html" id="g5-knockout-demo-template">
+
             <section class="splash-container is-center">
 
                 <div class="splash">
@@ -91,9 +103,7 @@
 
             </div>
 
-        </main>
-
-        <script src="src/static/bundle.js"></script>
+        </script>
 
     </body>
 </html>
