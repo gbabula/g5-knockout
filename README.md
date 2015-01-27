@@ -99,6 +99,7 @@ demoApp.init();
 * [Browserify Handbook](https://github.com/substack/browserify-handbook)
 * [Task Automation with npm run](http://substack.net/task_automation_with_npm_run)
 * [About Watchify](https://github.com/substack/watchify)
+* [Tape Tests](https://github.com/substack/tape)
 * [Simple HTTP Server](https://docs.python.org/2/library/simplehttpserver.html)
 
 ###License :shipit:
