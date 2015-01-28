@@ -10,7 +10,8 @@
 
 'use strict';
 
-var util = require('util');
+var util          = require('util');
+var EventEmitter  = require('events').EventEmitter;
 
 /**
  *
@@ -27,7 +28,15 @@ function EventTower() {
     this.model = this.model || {};
     this.viewModel = this.viewModel || {};
 
-    this.attachEvents();
+    // 
+    // ensure that model and viewModel both have an instance of
+    // EventEmitter before proceeding to attach events
+    // 
+    if (this.model instanceof EventEmitter && this.viewModel instanceof EventEmitter) {
+
+        this.attachEvents();
+
+    }
 
 }
 
@@ -44,7 +53,7 @@ EventTower.prototype.attachEvents = function() {
         _model = _this.model,
         _viewModel = _this.viewModel;
 
-    util.log('g5-knockout : add events');
+    util.log('g5-knockout : add events')
 
     /**
      *
