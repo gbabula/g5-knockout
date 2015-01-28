@@ -104,6 +104,7 @@ demoApp.init();
 * [About Watchify](https://github.com/substack/watchify)
 * [Tape Tests](https://github.com/substack/tape)
 * [Simple HTTP Server](https://docs.python.org/2/library/simplehttpserver.html)
+* [JSDoc](http://usejsdoc.org/)
 
 ###License :shipit:
 
