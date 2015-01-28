@@ -10,6 +10,7 @@
 
 'use strict';
 
+var _             = require('lodash');
 var util          = require('util');
 var EventEmitter  = require('events').EventEmitter;
 
@@ -24,6 +25,23 @@ var EventEmitter  = require('events').EventEmitter;
 function hasEventEmitter(obj) {
 
     return obj && obj instanceof EventEmitter;
+
+}
+
+/**
+ *
+ * @function detachEvents
+ * @param {Object} target
+ * @description checks if a given target has events, proceeds to remove if true
+ *
+ */
+function detachEvents(target) {
+
+    var hasEvents = target && hasEventEmitter(target) && _.size(target._events);
+
+    if (hasEvents) {
+        target.removeAllListeners();
+    }
 
 }
 
@@ -55,7 +73,7 @@ function EventTower() {
 /**
  *
  * @method attachEvents
- * @description core attachEvents method
+ * @description core attachEvents method, single location for all events
  * @returns {Object} this
  *
  */
@@ -89,6 +107,30 @@ EventTower.prototype.attachEvents = function() {
 
         _viewModel.refresh(data);
 
+    });
+
+    return this;
+
+};
+
+/**
+ *
+ * @method detachEvents
+ * @description detaches all events from core, model, and viewModel
+ * @returns {Object} this
+ *
+ */
+EventTower.prototype.detachEvents = function() {
+
+    var _this = this,
+        _model = _this.model,
+        _viewModel = _this.viewModel,
+        _eventGroup = [_this, _model, _viewModel];
+
+    util.log('g5-knockout : remove events');
+
+    _.each(_eventGroup, function(obj) {
+        detachEvents(obj);
     });
 
     return this;
