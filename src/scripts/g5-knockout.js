@@ -13,10 +13,10 @@ var _               = require('lodash');
 var ko              = require('knockout');
 var url             = require('url');
 var util            = require('util');
-var events          = require('events');
-var masterEvents    = require('./events/master');
 var MasterModel     = require('./model/master').MasterModel;
 var MasterViewModel = require('./viewModel/master').MasterViewModel;
+var EventEmitter    = require('events').EventEmitter;
+var EventTower      = require('./events/master').EventTower;
 
 /**
  *
@@ -48,13 +48,13 @@ function G5Knockout(opts) {
     this.model = new MasterModel(_this.opts);
     this.viewModel = new MasterViewModel(_this.opts);
 
-    masterEvents.EventTower.call(this);
-    events.EventEmitter.call(this);
+    EventEmitter.call(this);
+    EventTower.call(this);
 
 }
 
-util.inherits(G5Knockout, events.EventEmitter);
-util.inherits(G5Knockout, masterEvents.EventTower);
+util.inherits(G5Knockout, EventEmitter);
+util.inherits(G5Knockout, EventTower);
 
 /**
  *

@@ -8,10 +8,10 @@
 
 'use strict';
 
-var _       = require('lodash');
-var ko      = require('knockout');
-var util    = require('util');
-var events  = require('events');
+var _             = require('lodash');
+var ko            = require('knockout');
+var util          = require('util');
+var EventEmitter  = require('events').EventEmitter;
 
 /**
  *
@@ -42,11 +42,11 @@ function MasterViewModel(opts) {
     // 
     this.koBound = false;
 
-    events.EventEmitter.call(this);
+    EventEmitter.call(this);
 
 }
 
-util.inherits(MasterViewModel, events.EventEmitter);
+util.inherits(MasterViewModel, EventEmitter);
 
 /**
  *

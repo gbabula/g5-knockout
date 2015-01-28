@@ -8,10 +8,10 @@
 
 'use strict';
 
-var _         = require('lodash');
-var util      = require('util');
-var events    = require('events');
-var coreUtil  = require('../core/util');
+var _             = require('lodash');
+var util          = require('util');
+var coreUtil      = require('../core/util');
+var EventEmitter  = require('events').EventEmitter;
 
 /**
  *
@@ -32,11 +32,11 @@ function MasterModel(opts) {
     this.instance = false;
     this.dataCache = {};
 
-    events.EventEmitter.call(this);
+    EventEmitter.call(this);
 
 }
 
-util.inherits(MasterModel, events.EventEmitter);
+util.inherits(MasterModel, EventEmitter);
 
 /**
  *
