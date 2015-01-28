@@ -15,6 +15,20 @@ var EventEmitter  = require('events').EventEmitter;
 
 /**
  *
+ * @function hasEventEmitter
+ * @param {Object} obj
+ * @returns {Boolean}
+ * @description returns true if given obj has an instance of EventEmitter
+ *
+ */
+function hasEventEmitter(obj) {
+
+    return obj && obj instanceof EventEmitter;
+
+}
+
+/**
+ *
  * @constructor EventTower
  * @description mediates events between model and viewModel
  *
@@ -32,10 +46,8 @@ function EventTower() {
     // ensure that model and viewModel both have an instance of
     // EventEmitter before proceeding to attach events
     // 
-    if (this.model instanceof EventEmitter && this.viewModel instanceof EventEmitter) {
-
+    if (hasEventEmitter(this.model) && hasEventEmitter(this.viewModel)) {
         this.attachEvents();
-
     }
 
 }
@@ -53,7 +65,7 @@ EventTower.prototype.attachEvents = function() {
         _model = _this.model,
         _viewModel = _this.viewModel;
 
-    util.log('g5-knockout : add events')
+    util.log('g5-knockout : add events');
 
     /**
      *
