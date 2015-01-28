@@ -11,7 +11,7 @@
 var test        = require('tape');
 var g5knockout  = require('../src/scripts/g5-knockout');
 
-test('g5-knockout test', function(t) {
+test('g5-knockout core test', function(t) {
 
     t.plan(2);
 

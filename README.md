@@ -80,6 +80,9 @@ demoApp.init();
 
 ###TODO :construction:
 
+- [x] Refactor EventTower
+- [ ] Refactor viewModel - keep observables under one data Object for a cleaner reference
+- [ ] Refactor model
 - [ ] Register package
 - [ ] KO components implementation
 - [ ] Write additional tests
