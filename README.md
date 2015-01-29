@@ -21,7 +21,7 @@ _application architecture and solid development patterns._
 > Installs dependencies, runs initial build and starts up a simple [python server](http://localhost:9966)
 
 ```
-git clone https://github.com/gbabula/g5-knockout && cd g5-knockout && npm install && npm run start
+git clone https://github.com/gbabula/g5-knockout && cd g5-knockout && npm install && npm run start-dev
 ```
 
 ###Server
@@ -80,7 +80,6 @@ demoApp.init();
 
 ###TODO :construction:
 
-- [x] Refactor EventTower
 - [ ] Refactor viewModel - keep observables under one data Object for a cleaner reference
 - [ ] Refactor model
 - [ ] Register package
@@ -92,6 +91,8 @@ demoApp.init();
 - [ ] Step through code, document things that need to happen on each layer more clearly
 - [ ] Define code that needs to be replaced by users more clearly
 - [ ] Visual outline of code execution (simple diagram connecting code layers)
+- [ ] Build/Test Badge
+- [x] Refactor EventTower
 - [x] Medium writeup
 - [x] Fix server / watchify instance
 
