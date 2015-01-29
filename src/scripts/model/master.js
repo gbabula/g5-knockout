@@ -30,7 +30,6 @@ function MasterModel(opts) {
     }, opts);
 
     this.instance = false;
-    this.dataCache = {};
 
     EventEmitter.call(this);
 
@@ -47,8 +46,12 @@ util.inherits(MasterModel, EventEmitter);
  */
 MasterModel.prototype.init = function() {
 
-    this.fetch();
-    this.instance = true;
+    if (!this.instance) {
+
+        this.instance = true;
+        this.fetch();
+
+    }
 
     return this;
 
@@ -68,6 +71,7 @@ MasterModel.prototype.fetch = function(interval) {
 
     //
     // sample data Object, TODO fetch some real server data here
+    // implement interval for polling/live data
     // emit data event on success
     // 
     var data = {
@@ -89,23 +93,6 @@ MasterModel.prototype.fetch = function(interval) {
     util.log('g5-knockout : fetch master model data');
 
     this.emit('data', data);
-
-    return this;
-
-};
-
-/**
- *
- * @method update
- * @param {Object} data
- * @returns {Object} this
- *
- */
-MasterModel.prototype.update = function(data) {
-
-    //
-    // update cached data
-    //
 
     return this;
 

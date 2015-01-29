@@ -51,6 +51,8 @@ function G5Knockout(opts) {
     EventEmitter.call(this);
     EventTower.call(this);
 
+    return this;
+
 }
 
 util.inherits(G5Knockout, EventEmitter);
@@ -92,14 +94,13 @@ G5Knockout.prototype.init = function() {
 /**
  *
  * @method display
- * @param {Boolean} isVisible
+ * @param {Boolean|String} isVisible
  * @description toggles visibility of main container
+ * @example this.display(false); or this.display('false');
  * @returns {Object} this
  *
  */
 G5Knockout.prototype.display = function(isVisible) {
-
-    isVisible = isVisible || true;
 
     this.viewModel.isContainerVisible(isVisible);
 

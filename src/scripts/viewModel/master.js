@@ -193,9 +193,7 @@ MasterViewModel.prototype.refresh = function(data) {
 MasterViewModel.prototype.isContainerVisible = function(isVisible) {
 
     if (this.koBound) {
-
         this.data_g5knockout_visible(isVisible);
-
     }
 
     return this;
