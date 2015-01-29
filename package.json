@@ -2,7 +2,23 @@
   "name": "g5-knockout",
   "version": "0.1.0",
   "description": "Knockout/Browserify base app - MVVM with an event layer.",
-  "repository": "https://github.com/gbabula/g5-knockout",
+  "author": "Greg Babula",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gbabula/g5-knockout"
+  },
+  "bugs": {
+    "url": "https://github.com/gbabula/g5-knockout/issues"
+  },
+  "keywords": [
+    "knockout",
+    "browserify",
+    "MVVM",
+    "events",
+    "scaffold",
+    "base"
+  ],
   "main": "src/scripts/g5-knockout.js",
   "scripts": {
     "start": "npm run build && python -m SimpleHTTPServer 9966",
@@ -15,8 +31,6 @@
     "watch-css": "catw src/styles/*.css -o src/static/bundle.css -v",
     "watch": "npm run watch-js & npm run watch-css"
   },
-  "author": "Greg Babula",
-  "license": "ISC",
   "dependencies": {
     "brfs": "^1.2.0",
     "browserify": "^8.1.1",
