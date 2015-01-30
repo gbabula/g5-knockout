@@ -3,7 +3,7 @@
  * @module g5-knockout
  * @description Knockout/Browserify base app - MVVM with an event layer
  * @author Greg Babula
- * @version 0.1.0
+ * @version 0.1.1
  *
  */
 
@@ -108,5 +108,5 @@ G5Knockout.prototype.display = function(isVisible) {
 
 };
 
-exports.VERSION = '0.1.0';
+exports.VERSION = '0.1.1';
 exports.construct = G5Knockout;
