@@ -37,6 +37,13 @@ function MasterViewModel(opts) {
     this.active = false;
 
     // 
+    // storing all observables under a parent Object
+    // this will help keep the viewModel clean, and help maintain
+    // a clear separation between properties and observables
+    // 
+    this.$data = {};
+
+    // 
     // used internally to determine if knockout
     // bindings have been correctly applied
     // 
@@ -90,19 +97,18 @@ MasterViewModel.prototype.addG5Observables = function() {
 
     var _this = this;
 
-    util.log('g5-knockout : add viewModel observables');
+    util.log('g5-knockout : add core viewModel observables');
 
-    this.css = ko.observable(_this.opts.css);
-
-    this.data_g5knockout_instance = ko.observable(_this.instance);
-    this.data_g5knockout_visible = ko.observable(_this.active);
-    this.data_g5knockout_bound = ko.observable(!!_this.data_g5knockout_instance());
+    _this.$data.css = ko.observable(_this.opts.css);
+    _this.$data.g5knockout_instance = ko.observable(_this.instance);
+    _this.$data.g5knockout_visible = ko.observable(_this.active);
+    _this.$data.g5knockout_bound = ko.observable(!!_this.$data.g5knockout_instance());
 
     // 
     // if the observable is properly returning data, assume
     // that knockout bindings have been correctly applied
     // 
-    _this.koBound = _this.data_g5knockout_bound() || false;
+    _this.koBound = _this.$data.g5knockout_bound() || false;
 
     return this;
 
@@ -117,11 +123,13 @@ MasterViewModel.prototype.addG5Observables = function() {
  */
 MasterViewModel.prototype.addObservables = function() {
 
-    this.userName = ko.observable('');
-    this.userNameLength = ko.observable(0);
+    var _this = this;
 
-    this.dataTime = ko.observable();
-    this.dataCollection = ko.observableArray([]);
+    _this.$data.userName = ko.observable('');
+    _this.$data.userNameLength = ko.observable(0);
+
+    _this.$data.dataTime = ko.observable();
+    _this.$data.dataCollection = ko.observableArray([]);
 
     return this;
 
@@ -145,9 +153,9 @@ MasterViewModel.prototype.addComputedFunctions = function() {
      * @returns {Number} user name length
      *
      */
-    this.userNameLength = ko.computed(function() {
+    _this.$data.userNameLength = ko.computed(function() {
 
-        return _this.userName() && _this.userName().length;
+        return _this.$data.userName() && _this.$data.userName().length;
 
     });
 
@@ -174,8 +182,8 @@ MasterViewModel.prototype.refresh = function(data) {
 
     if (this.koBound) {
 
-        this.dataCollection(collection);
-        this.dataTime(time);
+        this.$data.dataCollection(collection);
+        this.$data.dataTime(time);
 
     }
 
@@ -193,7 +201,7 @@ MasterViewModel.prototype.refresh = function(data) {
 MasterViewModel.prototype.isContainerVisible = function(isVisible) {
 
     if (this.koBound) {
-        this.data_g5knockout_visible(isVisible);
+        this.$data.g5knockout_visible(isVisible);
     }
 
     return this;
