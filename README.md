@@ -80,18 +80,16 @@ demoApp.init();
 
 ###TODO
 
-- [ ] Refactor viewModel - keep observables under one data Object for a cleaner reference
 - [ ] Refactor model
 - [ ] KO components implementation
 - [ ] Write additional tests
 - [ ] Cleanup
 - [ ] Additional docs
-- [ ] Live demo
+- [ ] Live demo - host included demo as a live usage example
 - [ ] Step through code, document things that need to happen on each layer more clearly
-- [ ] Define code that needs to be replaced by users more clearly
 - [ ] Visual outline of code execution (simple diagram connecting code layers)
-- [ ] Build/Test Badge
-- [ ] Integrate Testling
+- [ ] Build/Test Badge - Integrate Testling
+- [x] Refactor viewModel - keep observables under one data Object for a cleaner reference
 - [x] Refactor EventTower
 - [x] Medium writeup
 - [x] Fix server / watchify instance
