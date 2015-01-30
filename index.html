@@ -10,10 +10,10 @@
     <body>
 
         <main id="g5-knockout-app" data-bind="attr: {
-            'class': css,
-            'data-g5knockout-instance': data_g5knockout_instance,
-            'data-g5knockout-visible': data_g5knockout_visible,
-            'data-g5knockout-bound': data_g5knockout_bound
+            'class': $data.css,
+            'data-g5knockout-instance': $data.g5knockout_instance,
+            'data-g5knockout-visible': $data.g5knockout_visible,
+            'data-g5knockout-bound': $data.g5knockout_bound
         }">
 
             <section data-bind="template: { name: 'g5-knockout-demo-template' }">
@@ -50,27 +50,27 @@
                         action="#"
                         class="pure-form"
                         data-bind="css: {
-                            'has-user-name': userName
+                            'has-user-name': $data.userName
                         }">
                         <fieldset>
                             <legend>Two way binding:</legend>
 
                             <input
                                 type="text"
-                                data-bind="textInput: userName"
+                                data-bind="textInput: $data.userName"
                                 placeholder="Your name"
                                 autofocus
                             />
                         </fieldset>
                     </form>
 
-                    <!-- ko if: userName -->
+                    <!-- ko if: $data.userName -->
                         <article>
                             <p><strong>User:</strong></p>
-                            <p data-bind="text: userName"></p>
+                            <p data-bind="text: $data.userName"></p>
 
                             <span>User name length = </span>
-                            <span data-bind="text: userNameLength"></span>
+                            <span data-bind="text: $data.userNameLength"></span>
                         </article>
                     <!-- /ko -->
                 </div>
@@ -78,7 +78,7 @@
                 <div class="content">
                     <p class="example-head">Modeled data:</p>
 
-                    <!-- ko if: dataCollection().length -->
+                    <!-- ko if: $data.dataCollection().length -->
                         <table class="pure-table">
                             <thead>
                                 <tr>
@@ -88,7 +88,7 @@
                             </thead>
 
                             <tbody>
-                                <!-- ko foreach: dataCollection-->
+                                <!-- ko foreach: $data.dataCollection-->
                                     <tr>
                                         <td data-bind="text: $index() + 1"></td>
                                         <td data-bind="text: $data.title"></td>
@@ -97,7 +97,7 @@
                             </tbody>
                         </table>
 
-                        <p><em>Timestamp - <span data-bind="text: dataTime"></span></em></p>
+                        <p><em>Timestamp - <span data-bind="text: $data.dataTime"></span></em></p>
                     <!-- /ko -->
                 </div>
 
