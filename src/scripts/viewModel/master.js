@@ -118,6 +118,7 @@ MasterViewModel.prototype.addG5Observables = function() {
  *
  * @method addObservables
  * @description method wrapping observable additions, single location for all regular observables
+ * @todo replace this with observabls specific to the your app
  * @returns {Object} this
  *
  */
@@ -127,8 +128,6 @@ MasterViewModel.prototype.addObservables = function() {
 
     _this.$data.userName = ko.observable('');
     _this.$data.userNameLength = ko.observable(0);
-
-    _this.$data.dataTime = ko.observable();
     _this.$data.dataCollection = ko.observableArray([]);
 
     return this;
@@ -175,16 +174,10 @@ MasterViewModel.prototype.refresh = function(data) {
 
     data = data || {};
 
-    var collection = data.collection,
-        time = data.time;
-
     util.log('g5-knockout : refresh viewModel data : ', data);
 
     if (this.koBound) {
-
-        this.$data.dataCollection(collection);
-        this.$data.dataTime(time);
-
+        this.$data.dataCollection(data && data.collection);
     }
 
     return this;
