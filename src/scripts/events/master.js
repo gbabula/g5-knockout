@@ -99,6 +99,18 @@ EventTower.prototype.attachEvents = function() {
 
     /**
      *
+     * @event error
+     * @param {Object} err
+     *
+     */
+    _model.on('data-error', function(err) {
+
+        util.log('g5-knockout : error fetching model data :', err);
+
+    });
+
+    /**
+     *
      * @event data-refresh
      * @param {Object} data
      *
