@@ -9,13 +9,13 @@
 'use strict';
 
 var test        = require('tape');
-var g5knockout  = require('../src/scripts/g5-knockout');
+var g5Knockout  = require('../src/scripts/g5-knockout');
 
 test('g5-knockout core test', function(t) {
 
     t.plan(2);
 
-    t.equal(typeof g5knockout.construct, 'function');
-    t.equal(typeof g5knockout.VERSION, 'string');
+    t.equal(typeof g5Knockout.construct, 'function');
+    t.equal(typeof g5Knockout.VERSION, 'string');
 
 });
