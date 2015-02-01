@@ -99,7 +99,7 @@ EventTower.prototype.attachEvents = function() {
 
     /**
      *
-     * @event error
+     * @event data-error
      * @param {Object} err
      *
      */
