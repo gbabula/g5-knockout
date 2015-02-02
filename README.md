@@ -49,7 +49,7 @@ npm run build
 ```js
 var g5Knockout = require('g5-knockout').construct;
 
-var demoApp = new g5Knockout({
+var demoApp = g5Knockout({
     container: document.getElementById('g5-knockout-app')
 });
 
@@ -64,8 +64,23 @@ demoApp.init();
 
 ###Methods
 
-* __init__: creates instance, instantiates viewModel and model
-* __display__: toggles container visibility based on `Boolean` param
+####init
+
+> instantiates viewModel, model, and applies bindings to main container
+
+```js
+demoApp.init();
+demoApp.init(); // single instance allowed, second call to method is ignored
+```
+
+####display
+
+> toggles visibility of main container
+
+```js
+demoApp.display(false); // main container is hidden
+demoApp.display(true);  // main container is visible
+```
 
 ###Style Guide / Rules
 
@@ -80,15 +95,14 @@ demoApp.init();
 
 ###TODO
 
-- [ ] Refactor model
-- [ ] KO components implementation
-- [ ] Write additional tests
 - [ ] Cleanup
+- [ ] Additional methods on core
+- [ ] Additional tests
 - [ ] Additional docs
-- [ ] Live demo - host included demo as a live usage example
-- [ ] Step through code, document things that need to happen on each layer more clearly
-- [ ] Visual outline of code execution (simple diagram connecting code layers)
+- [ ] Live demo
 - [ ] Build/Test Badge - Integrate Testling
+- [ ] Medium writeup v2, step through code, create additional diagrams
+- [x] Refactor model
 - [x] Refactor viewModel - keep observables under one data Object for a cleaner reference
 - [x] Refactor EventTower
 - [x] Medium writeup
