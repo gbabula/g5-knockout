@@ -18,8 +18,8 @@ var g5Knockout   = require('./g5-knockout').construct;
  */
 function onLoad() {
 
-    var demoApp = new g5Knockout({
-        container: document && document.getElementById('g5-knockout-app')
+    var demoApp = g5Knockout({
+        container: document.getElementById('g5-knockout-app')
     });
 
     demoApp.init();
