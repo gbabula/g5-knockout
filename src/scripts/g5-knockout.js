@@ -25,7 +25,7 @@ var EventTower      = require('./events/master').EventTower;
  * 
  * @param {Element} opts.container container id attr
  * @param {String} opts.i18n localization string
- * @param {Number} opts.interval refresh rate for model
+ * @param {Number} opts.interval refresh rate for model data
  *
  */
 function G5Knockout(opts) {
@@ -103,6 +103,36 @@ G5Knockout.prototype.init = function() {
 G5Knockout.prototype.display = function(isVisible) {
 
     this.viewModel.isContainerVisible(isVisible);
+
+    return this;
+
+};
+
+/**
+ *
+ * @method off
+ * @description detaches all events
+ * @returns {Object} this
+ *
+ */
+G5Knockout.prototype.off = function() {
+
+    this.detachEvents();
+
+    return this;
+
+};
+
+/**
+ *
+ * @method on
+ * @description attaches all events
+ * @returns {Object} this
+ *
+ */
+G5Knockout.prototype.on = function() {
+
+    this.attachEvents();
 
     return this;
 
