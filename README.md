@@ -64,7 +64,7 @@ demoApp.init();
 
 ###Methods
 
-####init
+####init()
 
 > instantiates viewModel, model, and applies bindings to main container
 
@@ -73,13 +73,29 @@ demoApp.init();
 demoApp.init(); // single instance allowed, second call to method is ignored
 ```
 
-####display
+####display(isVisible)
 
 > toggles visibility of main container
 
 ```js
 demoApp.display(false); // main container is hidden
 demoApp.display(true);  // main container is visible
+```
+
+####off()
+
+> detaches all events
+
+```js
+demoApp.off();
+```
+
+####on()
+
+> attaches all events
+
+```js
+demoApp.on();
 ```
 
 ###Style Guide / Rules
@@ -95,6 +111,8 @@ demoApp.display(true);  // main container is visible
 
 ###TODO
 
+- [ ] Add destroy method to core module
+- [ ] allow single instance of EventTower
 - [ ] Cleanup
 - [ ] Additional methods on core
 - [ ] Additional tests

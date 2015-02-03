@@ -24,7 +24,7 @@ function onLoad() {
 
     demoApp.init();
 
-    util.log('g5-knockout : init demoApp instance');
+    util.log('g5-knockout : init demoApp instance :', demoApp.instance);
     util.log('g5-knockout : demoApp model instance :', demoApp.model.instance);
     util.log('g5-knockout : demoApp viewModel instance :', demoApp.viewModel.instance);
     util.log('g5-knockout : demoApp viewModel knockout bindings :', demoApp.viewModel.koBound);
