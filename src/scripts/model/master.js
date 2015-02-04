@@ -120,7 +120,6 @@ MasterModel.prototype.fetch = function(opts) {
 
     });
 
-
     return this;
 
 };

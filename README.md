@@ -98,6 +98,14 @@ demoApp.off();
 demoApp.on();
 ```
 
+####destroy()
+
+> removes container element and destroys instance
+
+```js
+demoApp.destroy();
+```
+
 ###Style Guide / Rules
 
 * Style Guide - [https://github.com/airbnb/javascript](https://github.com/airbnb/javascript)
@@ -111,7 +119,6 @@ demoApp.on();
 
 ###TODO
 
-- [ ] Add destroy method to core module
 - [ ] allow single instance of EventTower
 - [ ] Cleanup
 - [ ] Additional methods on core
@@ -120,6 +127,7 @@ demoApp.on();
 - [ ] Live demo
 - [ ] Build/Test Badge - Integrate Testling
 - [ ] Medium writeup v2, step through code, create additional diagrams
+- [x] Add destroy method to core module
 - [x] Refactor model
 - [x] Refactor viewModel - keep observables under one data Object for a cleaner reference
 - [x] Refactor EventTower
