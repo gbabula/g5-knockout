@@ -3,7 +3,7 @@
  * @module g5-knockout
  * @description Knockout/Browserify base app - MVVM with an event layer
  * @author Greg Babula
- * @version 0.1.2
+ * @version 0.1.3
  *
  */
 
@@ -138,5 +138,32 @@ G5Knockout.prototype.on = function() {
 
 };
 
-exports.VERSION = '0.1.2';
+/**
+ *
+ * @method destroy
+ * @description removes container element and destroys instance
+ * @returns {Object} this
+ *
+ */
+G5Knockout.prototype.destroy = function() {
+
+    if (this.instance) {
+
+        this.off();
+
+        this.model = {};
+        this.viewModel = {};
+
+        this.container.outerHTML = '';
+        this.container = null;
+
+        this.instance = false;
+
+    }
+
+    return this;
+
+};
+
+exports.VERSION = '0.1.3';
 exports.construct = G5Knockout;
