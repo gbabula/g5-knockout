@@ -10,7 +10,10 @@ _g5-knockout is an app/module scaffold based on a tried and proven_
 
 _application architecture and solid development patterns._
 
+
 [Read More](https://medium.com/@gregbabula/knockout-browserify-base-app-mvvm-with-an-event-layer-7b0996eb4d0a)
+
+[View Demo App](http://babu.la/g5-knockout/)
 
 ---
 
@@ -124,14 +127,14 @@ demoApp.destroy();
 - [ ] Additional methods on core
 - [ ] Additional tests
 - [ ] Additional docs
-- [ ] Live demo
 - [ ] Build/Test Badge - Integrate Testling
 - [ ] Medium writeup v2, step through code, create additional diagrams
+- [x] Live [demo](http://babu.la/g5-knockout/)
 - [x] Add destroy method to core module
 - [x] Refactor model
 - [x] Refactor viewModel - keep observables under one data Object for a cleaner reference
 - [x] Refactor EventTower
-- [x] Medium writeup
+- [x] [Medium writeup](https://medium.com/@gregbabula/knockout-browserify-base-app-mvvm-with-an-event-layer-7b0996eb4d0a)
 - [x] Fix server / watchify instance
 - [x] Register package
 
