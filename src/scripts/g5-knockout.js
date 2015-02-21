@@ -3,7 +3,6 @@
  * @module g5-knockout
  * @description Knockout/Browserify base app - MVVM with an event layer
  * @author Greg Babula
- * @version 0.1.3
  *
  */
 
@@ -13,6 +12,8 @@ var _               = require('lodash');
 var ko              = require('knockout');
 var url             = require('url');
 var util            = require('util');
+var path            = require('path');
+var version         = require('../../package.json').version;
 var MasterModel     = require('./model/master').MasterModel;
 var MasterViewModel = require('./viewModel/master').MasterViewModel;
 var EventEmitter    = require('events').EventEmitter;
@@ -30,33 +31,31 @@ var EventTower      = require('./events/master').EventTower;
  */
 function G5Knockout(opts) {
 
-    var _this = this;
+    var _window = global,
+        _document = _window.document;
 
     if (!(this instanceof G5Knockout)) {
         return new G5Knockout(opts);
     }
 
     this.opts = _.extend({
-        container: document && document.getElementById('g5-knockout-app'),
+        container: _document && _document.getElementById('g5-knockout-app'),
         i18n: 'en'
     }, opts);
 
     this.instance = false;
     this.container = this.opts.container;
-    this.url = url.parse(window && window.location.href) || {};
+    this.url = _window.location ? url.parse(_window.location.href) : {};
 
-    this.model = new MasterModel(_this.opts);
-    this.viewModel = new MasterViewModel(_this.opts);
+    this.model = new MasterModel(this.opts);
+    this.viewModel = new MasterViewModel(this.opts);
+    this.eventTower = new EventTower(this, this.model, this.viewModel);
 
     EventEmitter.call(this);
-    EventTower.call(this);
-
-    return this;
 
 }
 
 util.inherits(G5Knockout, EventEmitter);
-util.inherits(G5Knockout, EventTower);
 
 /**
  *
@@ -66,8 +65,6 @@ util.inherits(G5Knockout, EventTower);
  *
  */
 G5Knockout.prototype.init = function() {
-
-    var _this = this;
 
     util.log('g5-knockout : init');
 
@@ -83,7 +80,7 @@ G5Knockout.prototype.init = function() {
         this.viewModel.init();
         this.model.init();
 
-        ko.applyBindings(_this.viewModel, _this.container);
+        ko.applyBindings(this.viewModel, this.container);
 
     }
 
@@ -117,7 +114,7 @@ G5Knockout.prototype.display = function(isVisible) {
  */
 G5Knockout.prototype.off = function() {
 
-    this.detachEvents();
+    this.eventTower.detachEvents();
 
     return this;
 
@@ -132,7 +129,7 @@ G5Knockout.prototype.off = function() {
  */
 G5Knockout.prototype.on = function() {
 
-    this.attachEvents();
+    this.eventTower.attachEvents();
 
     return this;
 
@@ -153,6 +150,7 @@ G5Knockout.prototype.destroy = function() {
 
         this.model = {};
         this.viewModel = {};
+        this.eventTower = {};
 
         this.container.outerHTML = '';
         this.container = null;
@@ -165,5 +163,5 @@ G5Knockout.prototype.destroy = function() {
 
 };
 
-exports.VERSION = '0.1.3';
+exports.VERSION = version;
 exports.construct = G5Knockout;

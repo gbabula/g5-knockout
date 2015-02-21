@@ -48,23 +48,27 @@ function detachEvents(target) {
 /**
  *
  * @constructor EventTower
+ * @param {Object} master
+ * @param {Object} model
+ * @param {Object} viewModel
  * @description mediates events between model and viewModel
  *
  */
-function EventTower() {
+function EventTower(master, model, viewModel) {
 
     if (!(this instanceof EventTower)) {
         return new EventTower();
     }
 
-    this.model = this.model || {};
-    this.viewModel = this.viewModel || {};
+    this.master = master || {};
+    this.model = model || {};
+    this.viewModel = viewModel || {};
 
     // 
-    // ensure that model and viewModel both have an instance of
+    // ensure all targets have an instance of 
     // EventEmitter before proceeding to attach events
     // 
-    if (hasEventEmitter(this.model) && hasEventEmitter(this.viewModel)) {
+    if (hasEventEmitter(this.master) && hasEventEmitter(this.model) && hasEventEmitter(this.viewModel)) {
         this.attachEvents();
     }
 
@@ -79,9 +83,9 @@ function EventTower() {
  */
 EventTower.prototype.attachEvents = function() {
 
-    var _this = this,
-        _model = _this.model,
-        _viewModel = _this.viewModel;
+    var _master = this.master,
+        _model = this.model,
+        _viewModel = this.viewModel;
 
     util.log('g5-knockout : add events');
 
@@ -134,10 +138,10 @@ EventTower.prototype.attachEvents = function() {
  */
 EventTower.prototype.detachEvents = function() {
 
-    var _this = this,
-        _model = _this.model,
-        _viewModel = _this.viewModel,
-        _eventGroup = [_this, _model, _viewModel];
+    var _master = this.master,
+        _model = this.model,
+        _viewModel = this.viewModel,
+        _eventGroup = [_master, _model, _viewModel];
 
     util.log('g5-knockout : remove events');
 
