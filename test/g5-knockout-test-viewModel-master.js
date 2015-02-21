@@ -18,8 +18,8 @@ test('g5-knockout viewModel master test', function(t) {
 
     var viewModel = MasterViewModel();
 
-    t.equal(viewModel instanceof MasterViewModel, true);
-    t.equal(viewModel instanceof EventEmitter, true);
+    t.ok(viewModel instanceof MasterViewModel, 'should have instance of MasterViewModel');
+    t.ok(viewModel instanceof EventEmitter, 'should have instance of EventeEmitter');
 
     t.equal(typeof viewModel.opts, 'object');
     t.equal(typeof viewModel.$data, 'object');

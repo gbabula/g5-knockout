@@ -18,8 +18,8 @@ test('g5-knockout model master test', function(t) {
 
     var model = MasterModel();
 
-    t.equal(model instanceof MasterModel, true);
-    t.equal(model instanceof EventEmitter, true);
+    t.ok(model instanceof MasterModel, 'should have instance of MasterModel');
+    t.ok(model instanceof EventEmitter, 'should have instance of EventEmitter');
 
     t.equal(typeof model.opts, 'object');
     t.equal(typeof model.dataCache, 'object');

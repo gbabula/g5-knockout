@@ -17,7 +17,7 @@ test('g5-knockout events master test', function(t) {
 
     var eventTower = EventTower();
 
-    t.equal(eventTower instanceof EventTower, true);
+    t.ok(eventTower instanceof EventTower, 'should have instance of EventTower');
 
     t.equal(typeof eventTower.model, 'object');
     t.equal(typeof eventTower.viewModel, 'object');
