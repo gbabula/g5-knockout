@@ -1,6 +1,6 @@
 {
   "name": "g5-knockout",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "Knockout/Browserify base app - MVVM with an event layer.",
   "author": "Greg Babula",
   "license": "ISC",
