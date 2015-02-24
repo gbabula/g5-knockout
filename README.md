@@ -122,13 +122,16 @@ demoApp.destroy();
 
 ###TODO
 
-- [ ] allow single instance of EventTower
-- [ ] Cleanup
+- [ ] Simple KO components implementation
+- [ ] Upgrade to Knockout 3.3 / etc...
 - [ ] Additional methods on core
-- [ ] Additional tests
-- [ ] Additional docs
 - [ ] Build/Test Badge - Integrate Testling
 - [ ] Medium writeup v2, step through code, create additional diagrams
+- [x] allow single instance of EventTower
+- [x] Cleanup
+- [x] Additional tests
+- [x] Additional docs
+
 - [x] Live [demo](http://babu.la/g5-knockout/)
 - [x] Add destroy method to core module
 - [x] Refactor model
