@@ -57,7 +57,7 @@ function detachEvents(target) {
 function EventTower(master, model, viewModel) {
 
     if (!(this instanceof EventTower)) {
-        return new EventTower();
+        return new EventTower(master, model, viewModel);
     }
 
     this.master = master || {};

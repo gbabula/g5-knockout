@@ -47,9 +47,9 @@ function G5Knockout(opts) {
     this.container = this.opts.container;
     this.url = _window.location ? url.parse(_window.location.href) : {};
 
-    this.model = new MasterModel(this.opts);
-    this.viewModel = new MasterViewModel(this.opts);
-    this.eventTower = new EventTower(this, this.model, this.viewModel);
+    this.model = MasterModel(this.opts);
+    this.viewModel = MasterViewModel(this.opts);
+    this.eventTower = EventTower(this, this.model, this.viewModel);
 
     EventEmitter.call(this);
 
