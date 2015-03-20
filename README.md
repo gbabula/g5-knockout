@@ -123,10 +123,10 @@ demoApp.destroy();
 ###TODO
 
 - [ ] Simple KO components implementation
-- [ ] Upgrade to Knockout 3.3 / etc...
 - [ ] Additional methods on core
 - [ ] Build/Test Badge - Integrate Testling
 - [ ] Medium writeup v2, step through code, create additional diagrams
+- [x] Upgrade to Knockout 3.3 / etc...
 - [x] allow single instance of EventTower
 - [x] Cleanup
 - [x] Additional tests
