@@ -124,6 +124,7 @@ demoApp.destroy();
 
 - [ ] Simple KO components implementation
 - [ ] Additional methods on core
+- [ ] Additional documentation and directions
 - [ ] Build/Test Badge - Integrate Testling
 - [ ] Medium writeup v2, step through code, create additional diagrams
 - [x] Upgrade to Knockout 3.3 / etc...
