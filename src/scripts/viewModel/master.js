@@ -105,6 +105,16 @@ MasterViewModel.prototype.addG5Observables = function() {
     _this.$data.g5knockout_bound = ko.observable(!!_this.$data.g5knockout_instance());
 
     // 
+    // keeping this in the viewModel to keep markup clean
+    // 
+    _this.$data.g5knockout_attr = {
+        'class': _this.$data.css,
+        'data-g5knockout-instance': _this.$data.g5knockout_instance,
+        'data-g5knockout-visible': _this.$data.g5knockout_visible,
+        'data-g5knockout-bound': _this.$data.g5knockout_bound
+    };
+
+    // 
     // if the observable is properly returning data, assume
     // that knockout bindings have been correctly applied
     // 

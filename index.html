@@ -9,12 +9,7 @@
     </head>
     <body>
 
-        <main id="g5-knockout-app" data-bind="attr: {
-            'class': $data.css,
-            'data-g5knockout-instance': $data.g5knockout_instance,
-            'data-g5knockout-visible': $data.g5knockout_visible,
-            'data-g5knockout-bound': $data.g5knockout_bound
-        }">
+        <main id="g5-knockout-app" data-bind="attr: $data.g5knockout_attr">
 
             <section data-bind="template: { name: 'g5-knockout-demo-template' }">
                 <span class="loading">Loading&hellip;</span>
