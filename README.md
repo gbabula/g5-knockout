@@ -123,6 +123,8 @@ demoApp.destroy();
 ###TODO
 
 - [ ] Simple KO components implementation
+- [ ] Browserify KO component bulk register
+- [ ] Demo component example
 - [ ] Additional methods on core
 - [ ] Additional documentation and directions
 - [ ] Build/Test Badge - Integrate Testling
