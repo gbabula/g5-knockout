@@ -17,10 +17,10 @@ var EventEmitter  = require('events').EventEmitter;
  *
  * @constructor MasterViewModel
  * @param {Object} opts
- * 
+ *
  * @param {String} opts.css classes added to main container
  * @param {Element} opts.container
- * 
+ *
  */
 function MasterViewModel(opts) {
 
@@ -36,17 +36,17 @@ function MasterViewModel(opts) {
     this.instance = false;
     this.active = false;
 
-    // 
+    //
     // storing all observables under a parent Object
     // this will help keep the viewModel clean, and help maintain
     // a clear separation between properties and observables
-    // 
+    //
     this.$data = {};
 
-    // 
+    //
     // used internally to determine if knockout
     // bindings have been correctly applied
-    // 
+    //
     this.koBound = false;
 
     EventEmitter.call(this);
@@ -68,16 +68,16 @@ MasterViewModel.prototype.init = function() {
         this.instance = true;
         this.active = true;
 
-        // 
+        //
         // core observables
-        // 
+        //
         this.addG5Observables();
 
-        // 
+        //
         // module specific observables chained with computed function additions,
         // makes sense to think about it this way because the computed functions
         // will be mutating previously added observables
-        // 
+        //
         this.addObservables().addComputedFunctions();
 
     }
@@ -104,9 +104,9 @@ MasterViewModel.prototype.addG5Observables = function() {
     _this.$data.g5knockout_visible = ko.observable(_this.active);
     _this.$data.g5knockout_bound = ko.observable(!!_this.$data.g5knockout_instance());
 
-    // 
-    // keeping this in the viewModel to keep markup clean
-    // 
+    //
+    // keeping this attr Object in the viewModel to keep markup clean
+    //
     _this.$data.g5knockout_attr = {
         'class': _this.$data.css,
         'data-g5knockout-instance': _this.$data.g5knockout_instance,
@@ -114,10 +114,10 @@ MasterViewModel.prototype.addG5Observables = function() {
         'data-g5knockout-bound': _this.$data.g5knockout_bound
     };
 
-    // 
+    //
     // if the observable is properly returning data, assume
     // that knockout bindings have been correctly applied
-    // 
+    //
     _this.koBound = _this.$data.g5knockout_bound() || false;
 
     return this;

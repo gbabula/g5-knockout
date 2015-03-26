@@ -64,10 +64,10 @@ function EventTower(master, model, viewModel) {
     this.model = model || {};
     this.viewModel = viewModel || {};
 
-    // 
-    // ensure all targets have an instance of 
+    //
+    // ensure all targets have an instance of
     // EventEmitter before proceeding to attach events
-    // 
+    //
     if (hasEventEmitter(this.master) && hasEventEmitter(this.model) && hasEventEmitter(this.viewModel)) {
         this.attachEvents();
     }
