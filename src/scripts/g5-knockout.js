@@ -10,10 +10,12 @@
 
 var _               = require('lodash');
 var ko              = require('knockout');
+var fs              = require('fs');
 var url             = require('url');
 var util            = require('util');
 var path            = require('path');
 var version         = require('../../package.json').version;
+var brkoComponent   = require('./g5-brko-component');
 var MasterModel     = require('./model/master').MasterModel;
 var MasterViewModel = require('./viewModel/master').MasterViewModel;
 var EventEmitter    = require('events').EventEmitter;
@@ -23,7 +25,7 @@ var EventTower      = require('./events/master').EventTower;
  *
  * @constructor G5Knockout
  * @param {Object} opts
- * 
+ *
  * @param {Element} opts.container container id attr
  * @param {String} opts.i18n localization string
  * @param {Number} opts.interval refresh rate for model data
@@ -43,6 +45,10 @@ function G5Knockout(opts) {
         i18n: 'en'
     }, opts);
 
+    this.components = [
+        'demo'
+    ];
+
     this.instance = false;
     this.container = this.opts.container;
     this.url = _window.location ? url.parse(_window.location.href) : {};
@@ -51,6 +57,7 @@ function G5Knockout(opts) {
     this.viewModel = MasterViewModel(this.opts);
     this.eventTower = EventTower(this, this.model, this.viewModel);
 
+    brkoComponent.register(this.components);
     EventEmitter.call(this);
 
 }
@@ -68,10 +75,10 @@ G5Knockout.prototype.init = function() {
 
     util.log('g5-knockout : init');
 
-    // 
+    //
     // instantiate viewModel first, this way all observables
     // are ready to be mutated and/or updated on data load/refresh
-    // 
+    //
 
     if (!this.instance) {
 
