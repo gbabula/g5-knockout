@@ -123,6 +123,7 @@ demoApp.destroy();
 ###TODO
 
 - [ ] Simple KO components implementation
+- [ ] Test for g5-brko-component
 - [ ] Additional methods on core
 - [ ] Additional documentation and directions
 - [ ] Build/Test Badge - Integrate Testling
