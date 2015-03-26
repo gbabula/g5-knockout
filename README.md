@@ -123,9 +123,11 @@ demoApp.destroy();
 ###TODO
 
 - [ ] Simple KO components implementation
-- [ ] Test for g5-brko-component
+- [ ] Tape test for g5-brko-component
+- [ ] Browserify KO component bulk register / WIP
 - [ ] Additional methods on core
 - [ ] Additional documentation and directions
+- [ ] Implement Git hooks and JSCS (airbnb style validation)
 - [ ] Build/Test Badge - Integrate Testling
 - [ ] Medium writeup v2, step through code, create additional diagrams
 - [x] Upgrade to Knockout 3.3 / etc...
