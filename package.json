@@ -24,10 +24,10 @@
     "start": "npm run build && python -m SimpleHTTPServer 9966",
     "start-dev": "npm run watch & npm start",
     "test": "tape test/*.js",
-    "build-js": "browserify src/scripts/index.js | uglifyjs -mc > src/static/bundle.js",
+    "build-js": "browserify -t brfs src/scripts/index.js | uglifyjs -mc > src/static/bundle.js",
     "build-css": "cat src/styles/*.css > src/static/bundle.css",
     "build": "npm run build-js && npm run build-css",
-    "watch-js": "watchify src/scripts/index.js -o src/static/bundle.js -dv",
+    "watch-js": "watchify -t brfs src/scripts/index.js -o src/static/bundle.js -dv",
     "watch-css": "catw src/styles/*.css -o src/static/bundle.css -v",
     "watch": "npm run watch-js & npm run watch-css"
   },
