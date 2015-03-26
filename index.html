@@ -11,7 +11,7 @@
 
         <main id="g5-knockout-app" data-bind="attr: $data.g5knockout_attr">
 
-            <section data-bind="template: { name: 'g5-knockout-demo-template' }">
+            <section data-bind="component: { name: 'demo-component', params: $data }">
                 <span class="loading">Loading&hellip;</span>
             </sction>
 
@@ -19,84 +19,6 @@
 
         <!-- bundled JS -->
         <script src="src/static/bundle.js"></script>
-
-        <!-- g5-knockout demo template -->
-        <script type="text/html" id="g5-knockout-demo-template">
-
-            <section class="splash-container is-center">
-
-                <div class="splash">
-                    <h1 class="splash-head">g5-knockout.js</h1>
-                    <p class="splash-subhead"><strong>Knockout/Browserify</strong> base app - 
-                    <strong>MVVM</strong> with an event layer.</p>
-
-                    <p><a href="https://github.com/gbabula/g5-knockout" 
-                        class="pure-button pure-button-primary">View on Github</a></p>
-                </div>
-
-            </section>
-
-            <div class="content-wrapper">
-
-                <div class="content">
-                    <h2 class="content-head is-center">Examples</h2>
-
-                    <form
-                        action="#"
-                        class="pure-form"
-                        data-bind="css: {
-                            'has-user-name': $data.userName
-                        }">
-                        <fieldset>
-                            <legend>Two way binding:</legend>
-
-                            <input
-                                type="text"
-                                data-bind="textInput: $data.userName"
-                                placeholder="Your name"
-                                autofocus
-                            />
-                        </fieldset>
-                    </form>
-
-                    <!-- ko if: $data.userName -->
-                        <article>
-                            <p><strong>User:</strong></p>
-                            <p data-bind="text: $data.userName"></p>
-
-                            <span>User name length = </span>
-                            <span data-bind="text: $data.userNameLength"></span>
-                        </article>
-                    <!-- /ko -->
-                </div>
-
-                <div class="content">
-                    <p class="example-head">Modeled data:</p>
-
-                    <!-- ko if: $data.dataCollection().length -->
-                        <table class="pure-table">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Title</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <!-- ko foreach: $data.dataCollection-->
-                                    <tr>
-                                        <td data-bind="text: $index() + 1"></td>
-                                        <td data-bind="text: $data.title"></td>
-                                    </tr>
-                                <!-- /ko -->
-                            </tbody>
-                        </table>
-                    <!-- /ko -->
-                </div>
-
-            </div>
-
-        </script>
 
     </body>
 </html>
