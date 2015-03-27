@@ -71,14 +71,7 @@ MasterViewModel.prototype.init = function() {
         //
         // core observables
         //
-        this.addG5Observables();
-
-        //
-        // module specific observables chained with computed function additions,
-        // makes sense to think about it this way because the computed functions
-        // will be mutating previously added observables
-        //
-        this.addObservables().addComputedFunctions();
+        this.addG5Observables().addObservables();
 
     }
 
@@ -127,46 +120,12 @@ MasterViewModel.prototype.addG5Observables = function() {
 /**
  *
  * @method addObservables
- * @description method wrapping observable additions, single location for all regular observables
- * @todo replace this with observabls specific to the your app
  * @returns {Object} this
  *
  */
 MasterViewModel.prototype.addObservables = function() {
 
-    var _this = this;
-
-    _this.$data.userName = ko.observable('');
-    _this.$data.userNameLength = ko.observable(0);
-    _this.$data.dataCollection = ko.observableArray([]);
-
-    return this;
-
-};
-
-/**
- *
- * @method addComputedFunctions
- * @description single location for all computed functions
- * @returns {Object} this
- *
- */
-MasterViewModel.prototype.addComputedFunctions = function() {
-
-    var _this = this;
-
-    /**
-     *
-     * @function
-     * @description computed function example
-     * @returns {Number} user name length
-     *
-     */
-    _this.$data.userNameLength = ko.computed(function() {
-
-        return _this.$data.userName() && _this.$data.userName().length;
-
-    });
+    this.$data.dataCollection = ko.observableArray([]);
 
     return this;
 
