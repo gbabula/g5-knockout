@@ -14,7 +14,7 @@ var EventEmitter     = require('events').EventEmitter;
 
 test('g5-knockout viewModel master test', function(t) {
 
-    t.plan(13);
+    t.plan(12);
 
     var viewModel = MasterViewModel();
 
@@ -30,7 +30,6 @@ test('g5-knockout viewModel master test', function(t) {
     t.equal(typeof viewModel.init, 'function');
     t.equal(typeof viewModel.addG5Observables, 'function');
     t.equal(typeof viewModel.addObservables, 'function');
-    t.equal(typeof viewModel.addComputedFunctions, 'function');
     t.equal(typeof viewModel.refresh, 'function');
     t.equal(typeof viewModel.isContainerVisible, 'function');
 
