@@ -23,6 +23,8 @@ _application architecture and solid development patterns._
 
 ###Setup
 
+> Install the package and use it as a scaffold for your app or module.
+
 ```
 npm install g5-knockout
 ```
