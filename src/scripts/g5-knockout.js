@@ -45,10 +45,6 @@ function G5Knockout(opts) {
         i18n: 'en'
     }, opts);
 
-    this.components = [
-        'demo'
-    ];
-
     this.instance = false;
     this.container = this.opts.container;
     this.url = _window.location ? url.parse(_window.location.href) : {};
@@ -57,7 +53,7 @@ function G5Knockout(opts) {
     this.viewModel = MasterViewModel(this.opts);
     this.eventTower = EventTower(this, this.model, this.viewModel);
 
-    brkoComponent.register(this.components);
+    brkoComponent.register();
     EventEmitter.call(this);
 
 }
