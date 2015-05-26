@@ -7,7 +7,7 @@
     "curly": false,
     "forin": false,
     "latedef": false,
-    "newcap": true,
+    "newcap": false,
     "strict": true,
     "trailing": true,
     "noempty": true,
@@ -16,7 +16,7 @@
     "boss": false,
     "debug": true,
     "evil": false,
-    "globalstrict": false,
+    "globalstrict": true,
     "laxbreak": false,
     "laxcomma": false,
     "onecase": false,
@@ -28,6 +28,13 @@
     "devel": true,
     "jquery": false,
 
-    "onevar": true,
-    "es3": true
+    "onevar": false,
+    "esnext": true,
+    "browserify": true,
+
+    "predef": [
+        "require",
+        "define",
+        "notify"
+    ]
 }
