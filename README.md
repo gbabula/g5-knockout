@@ -124,18 +124,18 @@ demoApp.destroy();
 
 ###TODO
 
+- [ ] Add babelify / update to ES6
+- [ ] Add additional templating engines (i.e. doT - http://jsperf.com/knockout-template-engines/25)
 - [ ] Additional methods on core
 - [ ] Additional documentation and directions
 - [ ] Implement Git hooks and JSCS (airbnb style validation)
 - [ ] Build/Test Badge - Integrate Testling
-- [ ] Medium writeup v2, step through code, create additional diagrams
 - [x] Simple KO components implementation
 - [x] Upgrade to Knockout 3.3 / etc...
 - [x] allow single instance of EventTower
 - [x] Cleanup
 - [x] Additional tests
 - [x] Additional docs
-
 - [x] Live [demo](http://babu.la/g5-knockout/)
 - [x] Add destroy method to core module
 - [x] Refactor model
