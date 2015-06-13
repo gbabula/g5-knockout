@@ -8,18 +8,18 @@
 
 'use strict';
 
-var _               = require('lodash');
-var ko              = require('knockout');
-var fs              = require('fs');
-var url             = require('url');
-var util            = require('util');
-var path            = require('path');
-var version         = require('../../package.json').version;
-var brkoComponent   = require('./g5-brko-component');
-var MasterModel     = require('./model/master').MasterModel;
-var MasterViewModel = require('./viewModel/master').MasterViewModel;
-var EventEmitter    = require('events').EventEmitter;
-var EventTower      = require('./events/master').EventTower;
+const _               = require('lodash');
+const ko              = require('knockout');
+const fs              = require('fs');
+const url             = require('url');
+const util            = require('util');
+const path            = require('path');
+const version         = require('../../package.json').version;
+const brkoComponent   = require('./g5-brko-component');
+const MasterModel     = require('./model/master').MasterModel;
+const MasterViewModel = require('./viewModel/master').MasterViewModel;
+const EventEmitter    = require('events').EventEmitter;
+const EventTower      = require('./events/master').EventTower;
 
 /**
  *
@@ -33,8 +33,8 @@ var EventTower      = require('./events/master').EventTower;
  */
 function G5Knockout(opts) {
 
-    var _window = global,
-        _document = _window.document;
+    let _window = global;
+    let _document = _window.document;
 
     if (!(this instanceof G5Knockout)) {
         return new G5Knockout(opts);

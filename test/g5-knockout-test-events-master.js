@@ -8,14 +8,14 @@
 
 'use strict';
 
-var test          = require('tape');
-var EventTower    = require('../src/scripts/events/master').EventTower;
+const test       = require('tape');
+const EventTower = require('../src/scripts/events/master').EventTower;
 
 test('g5-knockout events master test', function(t) {
 
     t.plan(5);
 
-    var eventTower = EventTower();
+    let eventTower = EventTower();
 
     t.ok(eventTower instanceof EventTower, 'should have instance of EventTower');
 

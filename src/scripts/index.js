@@ -8,8 +8,8 @@
 
 'use strict';
 
-var util         = require('util');
-var g5Knockout   = require('./g5-knockout').construct;
+const util         = require('util');
+const g5Knockout   = require('./g5-knockout').construct;
 
 /**
  *
@@ -18,7 +18,7 @@ var g5Knockout   = require('./g5-knockout').construct;
  */
 function onLoad() {
 
-    var demoApp = g5Knockout({
+    let demoApp = g5Knockout({
         container: document.getElementById('g5-knockout-app')
     });
 

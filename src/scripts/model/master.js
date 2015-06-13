@@ -8,10 +8,10 @@
 
 'use strict';
 
-var _             = require('lodash');
-var util          = require('util');
-var http          = require('http');
-var EventEmitter  = require('events').EventEmitter;
+const _             = require('lodash');
+const util          = require('util');
+const http          = require('http');
+const EventEmitter  = require('events').EventEmitter;
 
 /**
  *
@@ -69,9 +69,8 @@ MasterModel.prototype.init = function() {
  */
 MasterModel.prototype.fetch = function(opts) {
 
-    var _this = this;
-
-    var options = _.extend({
+    let _this = this;
+    let options = _.extend({
         interval: undefined,
         path: '/src/data/demo-app.json'
     }, this.opts, opts);

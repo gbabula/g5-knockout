@@ -8,13 +8,13 @@
 
 'use strict';
 
-var test          = require('tape');
-var g5Knockout    = require('../src/scripts/g5-knockout');
-var EventEmitter  = require('events').EventEmitter;
+const test          = require('tape');
+const g5Knockout    = require('../src/scripts/g5-knockout');
+const EventEmitter  = require('events').EventEmitter;
 
 test('g5-knockout core test', function(t) {
 
-    var testApp = g5Knockout.construct({
+    let testApp = g5Knockout.construct({
         container: undefined
     });
 

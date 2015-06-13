@@ -8,10 +8,10 @@
 
 'use strict';
 
-var _             = require('lodash');
-var ko            = require('knockout');
-var util          = require('util');
-var EventEmitter  = require('events').EventEmitter;
+const _             = require('lodash');
+const ko            = require('knockout');
+const util          = require('util');
+const EventEmitter  = require('events').EventEmitter;
 
 /**
  *
@@ -88,7 +88,7 @@ MasterViewModel.prototype.init = function() {
  */
 MasterViewModel.prototype.addG5Observables = function() {
 
-    var _this = this;
+    let _this = this;
 
     util.log('g5-knockout : add core viewModel observables');
 

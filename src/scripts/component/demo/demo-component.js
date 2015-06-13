@@ -8,7 +8,7 @@
 
 'use strict';
 
-var ko = require('knockout');
+const ko = require('knockout');
 
 /**
  * 
@@ -18,7 +18,7 @@ var ko = require('knockout');
  */
 function DemoComponentViewModel(params) {
 
-    var _this = this;
+    let _this = this;
 
     this.$data = params;
     this.$data.userName = ko.observable('');

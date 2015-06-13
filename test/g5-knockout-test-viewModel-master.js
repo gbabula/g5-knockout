@@ -8,15 +8,15 @@
 
 'use strict';
 
-var test             = require('tape');
-var MasterViewModel  = require('../src/scripts/viewModel/master').MasterViewModel;
-var EventEmitter     = require('events').EventEmitter;
+const test             = require('tape');
+const MasterViewModel  = require('../src/scripts/viewModel/master').MasterViewModel;
+const EventEmitter     = require('events').EventEmitter;
 
 test('g5-knockout viewModel master test', function(t) {
 
     t.plan(12);
 
-    var viewModel = MasterViewModel();
+    let viewModel = MasterViewModel();
 
     t.ok(viewModel instanceof MasterViewModel, 'should have instance of MasterViewModel');
     t.ok(viewModel instanceof EventEmitter, 'should have instance of EventeEmitter');

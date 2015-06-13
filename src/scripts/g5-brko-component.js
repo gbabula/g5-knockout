@@ -8,9 +8,9 @@
 
 'use strict';
 
-var ko    = require('knockout');
-var fs    = require('fs');
-var path  = require('path');
+const ko    = require('knockout');
+const fs    = require('fs');
+const path  = require('path');
 
 /**
  *

@@ -10,9 +10,9 @@
 
 'use strict';
 
-var _             = require('lodash');
-var util          = require('util');
-var EventEmitter  = require('events').EventEmitter;
+const _             = require('lodash');
+const util          = require('util');
+const EventEmitter  = require('events').EventEmitter;
 
 /**
  *
@@ -37,7 +37,7 @@ function hasEventEmitter(obj) {
  */
 function detachEvents(target) {
 
-    var hasEvents = target && hasEventEmitter(target) && _.size(target._events);
+    let hasEvents = target && hasEventEmitter(target) && _.size(target._events);
 
     if (hasEvents) {
         target.removeAllListeners();
@@ -83,9 +83,9 @@ function EventTower(master, model, viewModel) {
  */
 EventTower.prototype.attachEvents = function() {
 
-    var _master = this.master,
-        _model = this.model,
-        _viewModel = this.viewModel;
+    let _master = this.master;
+    let _model = this.model;
+    let _viewModel = this.viewModel;
 
     util.log('g5-knockout : add events');
 
@@ -138,10 +138,10 @@ EventTower.prototype.attachEvents = function() {
  */
 EventTower.prototype.detachEvents = function() {
 
-    var _master = this.master,
-        _model = this.model,
-        _viewModel = this.viewModel,
-        _eventGroup = [_master, _model, _viewModel];
+    let _master = this.master;
+    let _model = this.model;
+    let _viewModel = this.viewModel;
+    let _eventGroup = [_master, _model, _viewModel];
 
     util.log('g5-knockout : remove events');
 
