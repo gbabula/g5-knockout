@@ -1,6 +1,6 @@
 {
   "name": "g5-knockout",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "Knockout/Browserify base app - MVVM with an event layer.",
   "author": "Greg Babula",
   "license": "ISC",
@@ -30,7 +30,7 @@
     "start": "npm run build && python -m SimpleHTTPServer 9966",
     "start-dev": "npm run watch & npm start",
     "test": "babel-tape-runner test/*.js",
-    "build-js": "browserify  src/scripts/index.js | uglifyjs -mc > src/static/bundle.js",
+    "build-js": "browserify src/scripts/index.js | uglifyjs -mc > src/static/bundle.js",
     "build-css": "cat src/styles/*.css > src/static/bundle.css",
     "build": "npm run build-js && npm run build-css",
     "watch-js": "watchify src/scripts/index.js -o src/static/bundle.js -dv",

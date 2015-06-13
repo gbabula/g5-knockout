@@ -52,10 +52,12 @@ npm run build
 ###Module Usage
 
 ```js
-var g5Knockout = require('g5-knockout').construct;
 
-var demoApp = g5Knockout({
-    container: document.getElementById('g5-knockout-app')
+let demoApp = g5Knockout({
+    container: document.getElementById('g5-knockout-app'),
+    interval: 10000,
+    path: '/src/data/demo-app.json',
+    enablePolling: true
 });
 
 demoApp.init();
@@ -66,6 +68,8 @@ demoApp.init();
 * __container__: `Element` unique element to bind Knockout to
 * __interval__: `Number` refresh rate (milliseconds)
 * __i18n__: `String` localization identification (en/es)
+* __path__: `String` path to data file
+* __enablePolling__: `Boolean`
 
 ###Methods
 
@@ -124,12 +128,12 @@ demoApp.destroy();
 
 ###TODO
 
-- [ ] Add babelify / update to ES6
 - [ ] Add additional templating engines (i.e. doT - http://jsperf.com/knockout-template-engines/25)
 - [ ] Additional methods on core
 - [ ] Additional documentation and directions
 - [ ] Implement Git hooks and JSCS (airbnb style validation)
 - [ ] Build/Test Badge - Integrate Testling
+- [x] Add babelify / update to ES6
 - [x] Simple KO components implementation
 - [x] Upgrade to Knockout 3.3 / etc...
 - [x] allow single instance of EventTower
