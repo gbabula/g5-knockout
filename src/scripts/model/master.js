@@ -26,11 +26,14 @@ function MasterModel(opts) {
     }
 
     this.opts = _.extend({
-        interval: 40000
+        interval: 40000,
+        enablePolling: true,
+        path: ''
     }, opts);
 
     this.instance = false;
     this.dataCache = {};
+    this.dataFetch = null;
 
     EventEmitter.call(this);
 
@@ -61,19 +64,14 @@ MasterModel.prototype.init = function() {
 /**
  *
  * @method fetch
- * @param {Object} opts options Object passed to request
  * @description makes a GET request to specified path, emits data event, expecting JSON by default
- * @todo implement polling, cleanup
  * @returns {Object} this
  *
  */
-MasterModel.prototype.fetch = function(opts) {
+MasterModel.prototype.fetch = function() {
 
     let _this = this;
-    let options = _.extend({
-        interval: undefined,
-        path: '/src/data/demo-app.json'
-    }, this.opts, opts);
+    let _opts = this.opts;
 
     util.log('g5-knockout : fetch master model data');
 
@@ -84,7 +82,7 @@ MasterModel.prototype.fetch = function(opts) {
      * @param {Function} callback
      *
      */
-    http.get(options, function(res) {
+    http.get(_opts, function(res) {
 
         if (res.statusCode === 404) {
             _this.emit('data-error', 404);
@@ -98,10 +96,19 @@ MasterModel.prototype.fetch = function(opts) {
          */
         res.on('data', function(buf) {
 
-            var _data = JSON.parse(buf);
+            let _data = JSON.parse(buf);
 
-            _this.dataCache = _data;
-            _this.emit('data', _data);
+            //
+            // emit data event and update cache only if the data has changed since last fetch
+            //
+            if (!_.isEqual(_data, _this.dataCache)) {
+
+                _this.emit('data', _data);
+                _this.dataCache = _data;
+
+            }
+
+            _this.dataFetch = _opts.enablePolling && setTimeout(_this.fetch.bind(_this), _opts.interval);
 
         });
 
@@ -118,6 +125,38 @@ MasterModel.prototype.fetch = function(opts) {
         });
 
     });
+
+    return this;
+
+};
+
+/**
+ *
+ * @method start
+ * @returns {Object} this
+ * @description initiates data polling
+ *
+ */
+MasterModel.prototype.start = function() {
+
+    this.dataFetch = !this.dataFetch && setTimeout(this.fetch, this.opts.interval);
+
+    return this;
+
+};
+
+/**
+ *
+ * @method stop
+ * @returns {Object} this
+ * @description halts data polling
+ *
+ */
+MasterModel.prototype.stop = function() {
+
+    if (this.dataFetch) {
+        clearTimeout(this.dataFetch);
+    }
 
     return this;
 
