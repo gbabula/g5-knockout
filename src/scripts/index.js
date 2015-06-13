@@ -8,8 +8,8 @@
 
 'use strict';
 
-const util         = require('util');
-const g5Knockout   = require('./g5-knockout').construct;
+const util       = require('util');
+const g5Knockout = require('./g5-knockout').construct;
 
 /**
  *
@@ -19,7 +19,10 @@ const g5Knockout   = require('./g5-knockout').construct;
 function onLoad() {
 
     let demoApp = g5Knockout({
-        container: document.getElementById('g5-knockout-app')
+        container: document.getElementById('g5-knockout-app'),
+        interval: 10000,
+        path: '/src/data/demo-app.json',
+        enablePolling: true
     });
 
     demoApp.init();
